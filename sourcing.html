@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farm Sourcing — Meadowly Dairy Co.</title>
+  <meta name="description" content="Meet the three partner farms, the nine-hour cold chain and the people who test every batch behind Meadowly milk. Traceable, regenerative and fiercely local.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="Farm Sourcing — Meadowly Dairy Co.">
+  <meta property="og:description" content="Three farms, one cold chain and a paper trail for every bottle.">
+  <meta property="og:image" content="assets/images/source-hero-main.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="sourcing">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--forest" id="sourcing">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div class="page-hero__copy reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+              <span aria-current="page">Farm sourcing</span>
+            </nav>
+            <span class="eyebrow">Every bottle has a place</span>
+            <h1>Milk is local, or it isn't fresh.</h1>
+            <p class="lead">We work with three family farms within 90 kilometres of Coimbatore. No consolidated supply chains, no anonymous tankers. Just a short road and a relationship we can name.</p>
+            <div class="page-hero__actions">
+              <a class="btn btn--butter" href="#farms">Meet the farms</a>
+              <a class="btn btn--outline" href="contact.html">Plan a visit</a>
+            </div>
+            <div class="page-hero__meta">
+              <div><strong>3</strong><span>Partner farms</span></div>
+              <div><strong>90 km</strong><span>Furthest farm radius</span></div>
+              <div><strong>9 hrs</strong><span>Pasture to porch</span></div>
+            </div>
+          </div>
+          <div class="page-hero__media page-hero__media--organic reveal reveal--scale">
+            <img class="main" src="assets/images/source-hero-main.jpg" alt="A Meadowly partner farmer walking through pasture at sunrise" fetchpriority="high">
+            <div class="tag-float">
+              <span class="badge badge--butter">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+                Anaikatti · Nilgiris · Pollachi
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trace">
+      <div class="container">
+        <div class="pdp-source">
+          <div class="pdp-source__media reveal reveal--left">
+            <img src="assets/images/source-hero-inset.jpg" alt="A farmer checking a milk collection record" loading="lazy">
+            <div class="pdp-source__badge">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#copy"></use></svg>
+              Batch MDAY-78-2611 · traceable
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">Trace a bottle</span>
+            <h2>From a code on a cap to a name on a gate.</h2>
+            <p class="lead">Every cap carries a batch code. Enter it in your dashboard, or ask us, and we can tell you the farm, the collection time, the chilling log and the person who signed for it.</p>
+            <div class="stack-sm">
+              <label class="field-label" for="traceCode">Your bottle cap code</label>
+              <div class="trace-form">
+                <input id="traceCode" type="text" value="MDAY-78-2611" readonly aria-label="Example batch code">
+                <button class="btn btn--primary" type="button" data-copy="MDAY-78-2611">Copy code</button>
+              </div>
+            </div>
+            <ul class="check-list" style="margin-top:1.2rem;">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Farm and herd identified on every batch</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Collection, chill and bottling times logged</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Lab result kept for six months</li>
+            </ul>
+            <div class="page-hero__actions">
+              <a class="btn btn--outline btn--sm" href="dashboard.html">Open batch history</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="farms">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Three families</span>
+            <h2 class="section-title">The farms behind the pour.</h2>
+          </div>
+          <p class="section-copy">Small enough to know every animal. Serious enough to invest in soil, water and shade.</p>
+        </div>
+        <div class="farm-grid">
+          <article class="farm-card reveal">
+            <div class="farm-card__media">
+              <img src="assets/images/source-farm-1.jpg" alt="The Kannan family farm in Anaikatti" loading="lazy">
+            </div>
+            <div class="farm-card__body">
+              <span class="eyebrow">Anaikatti · 24 km</span>
+              <h3>Kannan's pasture</h3>
+              <p>Forty-six cows, 28 acres of rotated grass and a shade canopy that predates the farm. Kannan has supplied Meadowly since our first month.</p>
+              <div class="farm-card__meta">
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cow"></use></svg> 46 cows</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg> 28 acres</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#drop"></use></svg> Whole milk</span>
+              </div>
+            </div>
+          </article>
+          <article class="farm-card reveal">
+            <div class="farm-card__media">
+              <img src="assets/images/source-farm-2.jpg" alt="Gir cattle grazing at a Pollachi farm" loading="lazy">
+            </div>
+            <div class="farm-card__body">
+              <span class="eyebrow">Pollachi · 58 km</span>
+              <h3>The Gir collective</h3>
+              <p>Three neighbouring families raising a registered Gir herd. Calves stay with their mothers, and the milk is collected once each morning.</p>
+              <div class="farm-card__meta">
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cow"></use></svg> 72 Gir cows</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#award"></use></svg> A2 milk</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg> Rain-fed</span>
+              </div>
+            </div>
+          </article>
+          <article class="farm-card reveal">
+            <div class="farm-card__media">
+              <img src="assets/images/source-farm-3.jpg" alt="A hillside farm in the Nilgiris" loading="lazy">
+            </div>
+            <div class="farm-card__body">
+              <span class="eyebrow">Nilgiris · 88 km</span>
+              <h3>Selvi's high pasture</h3>
+              <p>A small highland farm where the grass is slower and the mornings are colder. Selvi's milk makes our cultured butter and aged cheese.</p>
+              <div class="farm-card__meta">
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cow"></use></svg> 31 cows</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#butter"></use></svg> Butter &amp; cheese</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#award"></use></svg> High-altitude</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cold-chain">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">The nine-hour cold chain</span>
+            <h2 class="section-title">Freshness is a timetable.</h2>
+          </div>
+          <p class="section-copy">From the first milking to the first pour, every step has a time, a temperature and a person responsible.</p>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step reveal">
+            <div class="process-step__time">4:30</div>
+            <img class="process-step__img" src="assets/images/source-process-1.jpg" alt="Hands milking a cow at dawn" loading="lazy">
+            <div class="process-step__copy">
+              <h3>Hand-checked milking</h3>
+              <p>Every animal is inspected before milking. The first pulls go into a strip cup, never the collection pail.</p>
+            </div>
+            <span class="process-step__badge">Farm</span>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-step__time">4:45</div>
+            <img class="process-step__img" src="assets/images/source-process-2.jpg" alt="Milk being poured into a chilled collection can" loading="lazy">
+            <div class="process-step__copy">
+              <h3>Fast, gentle chill</h3>
+              <p>Milk drops to 4°C within 45 minutes in a plate chiller. Nothing is added, and nothing is removed.</p>
+            </div>
+            <span class="process-step__badge">Chill</span>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-step__time">5:15</div>
+            <img class="process-step__img" src="assets/images/source-process-3.jpg" alt="A milk sample being tested in the dairy lab" loading="lazy">
+            <div class="process-step__copy">
+              <h3>Batch testing</h3>
+              <p>Fat, protein, temperature and antibiotic screening. If it is a question mark, it does not move forward.</p>
+            </div>
+            <span class="process-step__badge">Quality</span>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-step__time">6:00</div>
+            <img class="process-step__img" src="assets/images/source-process-4.jpg" alt="Milk being bottled into returnable glass" loading="lazy">
+            <div class="process-step__copy">
+              <h3>Bottled and on the road</h3>
+              <p>Glass bottles are filled, capped and loaded into the cold van. The first route leaves at 6:10.</p>
+            </div>
+            <span class="process-step__badge">Dispatch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="lab">
+      <div class="container">
+        <div class="lab-grid">
+          <div class="lab-image reveal reveal--left">
+            <img src="assets/images/source-lab.jpg" alt="A dairy scientist examining a milk sample" loading="lazy">
+            <div class="lab-image__stamp">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg>
+              100%<br>batch tested
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">The Meadowly lab</span>
+            <h2>A small lab with a long memory.</h2>
+            <p class="lead">We keep a sample from every batch for six months. If a customer calls about a bottle, we can go back to the exact farm and collection. Quality is not just a test; it is a record.</p>
+            <div class="lab-stats">
+              <div class="lab-stat"><strong>6 mo</strong><span>Sample retention</span></div>
+              <div class="lab-stat"><strong>0</strong><span>Antibiotic tolerance</span></div>
+              <div class="lab-stat"><strong>Daily</strong><span>Calibration</span></div>
+            </div>
+            <ul class="check-list" style="margin-top:1.2rem;">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> FSSAI-certified laboratory and cold chain</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Third-party audit twice a year</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Results shared on subscriber request</li>
+            </ul>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="products.html#quality">See our quality standards</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sustainability">
+      <div class="container">
+        <div class="sustain-split">
+          <div class="sustain-split__copy reveal">
+            <span class="eyebrow">A longer horizon</span>
+            <h2>The farm should be better for the next generation.</h2>
+            <p class="lead">We don't call ourselves sustainable because of a sticker. We measure the small things: soil cover, water use, glass returns and what the farm looks like in ten years.</p>
+            <div class="stack-sm" style="margin-top:1.2rem;">
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg>
+                <div><strong>Pasture rested, not mined</strong><span>21-day rotation on all partner farms.</span></div>
+              </div>
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg>
+                <div><strong>Glass that comes home</strong><span>Each bottle refilled up to 25 times.</span></div>
+              </div>
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#drop"></use></svg>
+                <div><strong>Water returned clean</strong><span>Wash water treated and reused on fodder.</span></div>
+              </div>
+            </div>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="about.html#promise">Read our promise</a>
+              <a class="btn btn--outline" href="contact.html">Visit the farms</a>
+            </div>
+          </div>
+          <div class="sustain-split__imgs reveal reveal--right">
+            <img src="assets/images/source-sustainability-1.jpg" alt="A farmer planting a sapling at the edge of the pasture" loading="lazy">
+            <img src="assets/images/source-sustainability-2.jpg" alt="Returnable glass bottles drying after washing" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

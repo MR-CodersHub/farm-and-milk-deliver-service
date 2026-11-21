@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Meadowly Dairy Co.</title>
+  <meta name="description" content="Talk to the Meadowly care team, check if your pincode is on the morning route, or plan a visit to the farm. We reply within one working day.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="Contact Meadowly Dairy Co.">
+  <meta property="og:description" content="Pincode checks, delivery questions and farm visits — talk to a real person.">
+  <meta property="og:image" content="assets/images/contact-hero.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--sage" id="contact-hero">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div class="page-hero__copy reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+              <span aria-current="page">Contact</span>
+            </nav>
+            <span class="eyebrow">Someone is at the desk</span>
+            <h1>Tell us what you need. We'll answer like people.</h1>
+            <p class="lead">Questions about your box, a delivery that needs a note, or a visit to the farm — the Meadowly care team reads every message and replies within one working day.</p>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="#contact-form">Send a note</a>
+              <a class="btn btn--outline" href="tel:+914224001880">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg>
+                +91 422 400 1880
+              </a>
+            </div>
+            <div class="page-hero__meta">
+              <div><strong>7 AM–8 PM</strong><span>Every day, including Sunday</span></div>
+              <div><strong>1 day</strong><span>Typical reply time</span></div>
+              <div><strong>641–642</strong><span>Core delivery pincodes</span></div>
+            </div>
+          </div>
+          <div class="page-hero__media page-hero__media--arch reveal reveal--scale">
+            <img class="main" src="assets/images/contact-hero.jpg" alt="A Meadowly care team member at the farm desk" fetchpriority="high">
+            <div class="float-card">
+              <span class="eyebrow">Real humans</span>
+              <strong style="display:block; margin-top:.25rem; font-family:var(--font-display); font-size:1.3rem;">No bot. No queue.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="delivery-check">
+      <div class="container">
+        <div class="contact-form-panel">
+          <div class="grid grid-2">
+            <div>
+              <span class="eyebrow">Check your morning</span>
+              <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);">Is your pincode on the route?</h2>
+              <p>We deliver across Coimbatore city and select neighbourhoods. Enter your pincode and we'll tell you whether the milk van already knows your street.</p>
+            </div>
+            <div>
+              <form class="pincode-form" id="pincodeForm" action="#" method="post">
+                <label for="pincodeInput">Your pincode</label>
+                <div class="pincode-row">
+                  <input class="input" id="pincodeInput" type="text" name="pincode" inputmode="numeric" autocomplete="postal-code" maxlength="6" pattern="6[0-9]{5}" placeholder="641 012" required>
+                  <button class="btn btn--primary" type="submit">Check</button>
+                </div>
+              </form>
+              <div class="area-results" id="pincodeResult" aria-live="polite"></div>
+              <p class="form-note">We add new streets every month. If we're not there yet, we'll keep your pincode on the route list.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact-form">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-form-panel reveal">
+            <span class="eyebrow">Write to the care team</span>
+            <h2>A note, a question, a small fix.</h2>
+            <p>Tell us what's happening. If it's about a delivery, include your area and the date — it helps us find the right bottle.</p>
+            <form class="form-grid" id="contactForm" action="#" method="post">
+              <div class="field">
+                <label for="contactName">Your name</label>
+                <input id="contactName" type="text" name="name" placeholder="Meera Raghunathan" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="contactPhone">Phone <span class="optional">(optional)</span></label>
+                <input id="contactPhone" type="tel" name="phone" placeholder="+91 98765 43210" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="contactTopic">What is it about?</label>
+                <select id="contactTopic" name="topic">
+                  <option>My delivery</option>
+                  <option>My subscription</option>
+                  <option>Product question</option>
+                  <option>Farm visit</option>
+                  <option>Wholesale &amp; cafés</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="field field--full">
+                <label for="contactMessage">Your note</label>
+                <textarea id="contactMessage" name="message" rows="6" placeholder="Tell us what you need. The more detail, the better." required></textarea>
+              </div>
+              <div class="field field--full">
+                <button class="btn btn--primary" type="submit">Send to the care team</button>
+                <p class="form-note">By sending this, you agree to our friendly privacy policy. No lists, no spam.</p>
+              </div>
+            </form>
+          </div>
+          <div class="contact-side reveal reveal--right">
+            <a class="contact-channel" href="tel:+914224001880">
+              <span class="contact-channel__icon">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg>
+              </span>
+              <div>
+                <strong>Call the desk</strong>
+                <p>+91 422 400 1880 · 7 AM to 8 PM, every day</p>
+                <span>Call now</span>
+              </div>
+            </a>
+            <a class="contact-channel" href="mailto:care@meadowly.in">
+              <span class="contact-channel__icon">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg>
+              </span>
+              <div>
+                <strong>Email us</strong>
+                <p>care@meadowly.in · replies within one working day</p>
+                <span>Write an email</span>
+              </div>
+            </a>
+            <a class="contact-channel" href="https://wa.me/919876543210" target="_blank" rel="noopener">
+              <span class="contact-channel__icon">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg>
+              </span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p>Quick questions, delivery notes, bottle returns</p>
+                <span>Open WhatsApp</span>
+              </div>
+            </a>
+            <div class="contact-aside-media">
+              <img src="assets/images/contact-aside.jpg" alt="A care team member packing a Meadowly delivery box" loading="lazy">
+              <div class="contact-aside-media__body">
+                <h3>The morning desk</h3>
+                <p>From 5:30 AM, the route team takes over. If your delivery is already out, call the desk and we'll reach the rider.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="visit">
+      <div class="container">
+        <div class="visit-card">
+          <div class="reveal">
+            <span class="eyebrow">Come see for yourself</span>
+            <h2>Visit the Anaikatti farm.</h2>
+            <p class="lead">We host small farm visits on Saturday mornings. You'll meet the herd, see the milking shed and stay for breakfast. Children are welcome; boots are provided.</p>
+            <div class="stack-sm" style="margin-top:1.2rem;">
+              <p><strong>Address:</strong> Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</p>
+              <p><strong>Visits:</strong> Saturdays, 8:00 AM and 10:30 AM</p>
+              <p><strong>Bring:</strong> A hat, a water bottle and a curious appetite.</p>
+            </div>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="mailto:visits@meadowly.in?subject=Farm%20visit">Book a farm visit</a>
+              <a class="link-arrow" href="sourcing.html">Meet the farms
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+            <div class="map-panel" style="margin-top:1.4rem;">
+              <span class="map-pin">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+              </span>
+              <span class="map-label">Anaikatti farm · 16 km from the city centre · follow the narrow road past the bamboo grove</span>
+            </div>
+          </div>
+          <div class="visit-card__media reveal reveal--right">
+            <img src="assets/images/contact-visit.jpg" alt="The entrance to the Anaikatti farm with a welcome table" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact-faq">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="reveal">
+            <span class="eyebrow">Before you write</span>
+            <h2>A few quick answers.</h2>
+            <p class="section-copy">The things people ask most at the desk. If yours isn't here, write to us — we'll add it.</p>
+            <div class="page-hero__actions">
+              <a class="btn btn--outline" href="#contact-form">Ask something else</a>
+            </div>
+          </div>
+          <div class="accordion reveal" data-accordion data-single="true">
+            <div class="acc-item" id="privacy">
+              <button class="acc-btn" type="button" aria-expanded="false">
+                What is your Privacy Policy?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>We respect your privacy completely. Your name, delivery address, phone number, and morning preferences are used solely to fulfill your sunrise deliveries and care desk requests. We never sell, rent, or share personal data with third parties.</p></div></div>
+            </div>
+            <div class="acc-item" id="terms">
+              <button class="acc-btn" type="button" aria-expanded="false">
+                What are your Terms &amp; Conditions?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>Fresh deliveries arrive daily between 5:30 AM and 6:30 AM. Returnable glass bottles should be rinsed and left at your door for morning collection. Subscriptions can be paused, modified, or canceled up to 9 PM the previous evening without penalty.</p></div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn" type="button" aria-expanded="true">
+                How do I change my delivery address?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>Open your dashboard, choose “Delivery details”, and update the address before 9 PM the evening before your next delivery. For same-day changes, call the desk.</p></div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn" type="button" aria-expanded="false">
+                What do I do with empty bottles?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>Rinse them and leave them at your door on the next delivery day. The rider collects them with your new order and we wash them at the farm.</p></div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn" type="button" aria-expanded="false">
+                Can I pause for a holiday?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>Yes. Set a pause in the dashboard for any dates you'll be away. Your billing adjusts automatically and no bottles are left waiting.</p></div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn" type="button" aria-expanded="false">
+                Do you supply cafés and offices?
+                <span class="acc-btn__icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel"><div><p>We do. Choose “Wholesale &amp; cafés” in the form or write to trade@meadowly.in with your weekly volume. We'll send a simple rate card and a tasting.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact-cta">
+      <div class="container">
+        <div class="newsletter-panel newsletter-panel--forest">
+          <div class="reveal">
+            <span class="eyebrow">Prefer to start quietly?</span>
+            <h2>Try a week of mornings.</h2>
+            <p>Choose a small box, pick your delivery days and let the first bottle tell you whether we're a match. No long commitment.</p>
+          </div>
+          <div class="reveal">
+            <div class="page-hero__actions">
+              <a class="btn btn--butter" href="subscription.html">Build a trial box</a>
+              <a class="btn btn--outline" href="pricing.html">See pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

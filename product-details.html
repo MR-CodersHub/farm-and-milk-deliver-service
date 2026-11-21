@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sunrise Whole Milk — Meadowly Dairy Co.</title>
+  <meta name="description" content="Morning-fresh whole milk from named Nilgiris farms, gently pasteurised, rapidly chilled and delivered in returnable glass. Explore the bottle, its farm and its kitchen.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="Sunrise Whole Milk — Meadowly Dairy Co.">
+  <meta property="og:description" content="The everyday bottle with a very short journey and a very long memory.">
+  <meta property="og:image" content="assets/images/pd-main.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="product-details">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="section section--tight" id="the-bottle">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+          <a href="products.html">The dairy</a>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+          <span aria-current="page">Sunrise Whole Milk</span>
+        </nav>
+        <div class="pdp-layout">
+          <div class="pdp-gallery reveal reveal--left">
+            <div class="pdp-main">
+              <div class="pdp-floating">
+                <span class="badge badge--butter">Bestseller</span>
+                <span class="badge">Glass bottle</span>
+              </div>
+              <img id="pdpMainImage" src="assets/images/pd-main.jpg" alt="A bottle of Sunrise Whole Milk on a sunlit table" fetchpriority="high">
+            </div>
+            <div class="pdp-thumbs" aria-label="Product gallery">
+              <button class="pdp-thumb" type="button" data-pdp-thumb data-src="assets/images/pd-thumb-blocks.jpg" data-alt="Frozen milk cubes made from Sunrise Whole Milk">
+                <img src="assets/images/pd-thumb-blocks.jpg" alt="Milk ice cubes" loading="lazy">
+              </button>
+              <button class="pdp-thumb" type="button" data-pdp-thumb data-src="assets/images/pd-thumb-sieve.jpg" data-alt="Fresh milk poured through a fine sieve">
+                <img src="assets/images/pd-thumb-sieve.jpg" alt="Milk poured through a sieve" loading="lazy">
+              </button>
+            </div>
+          </div>
+          <div class="pdp-info reveal reveal--right">
+            <span class="eyebrow">Milk · 1 litre returnable glass</span>
+            <div class="rating">
+              <span class="rating__stars" aria-label="4.9 out of 5 stars">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+              </span>
+              4.9 <span class="rating__count">· 842 reviews</span>
+            </div>
+            <h1>Sunrise Whole Milk</h1>
+            <p>Our everyday whole milk, bottled the same morning it's collected. Creamy but never heavy, with the clean, grassy finish of milk that hasn't travelled far.</p>
+            <div class="price-large">
+              <span data-pdp-price>₹70</span>
+              <small data-pdp-period>/ delivery · save 10%</small>
+              <del data-pdp-strike>₹78</del>
+            </div>
+            <div class="option-block">
+              <div class="option-block__label">Bottle size <span>Choose one</span></div>
+              <div class="option-chips">
+                <button class="option-chip" type="button" data-size data-price="42">500 ml</button>
+                <button class="option-chip is-active" type="button" data-size data-price="78">1 litre</button>
+                <button class="option-chip" type="button" data-size data-price="152">2 litres</button>
+              </div>
+            </div>
+            <div class="purchase-box">
+              <div class="purchase-modes">
+                <button class="purchase-mode is-active" type="button" data-purchase="subscribe">
+                  <strong>Subscribe &amp; save 10%</strong>
+                  <small>Every morning, pause anytime</small>
+                </button>
+                <button class="purchase-mode" type="button" data-purchase="once">
+                  <strong>One-time delivery</strong>
+                  <small>Tomorrow morning, no rhythm</small>
+                </button>
+              </div>
+              <div class="purchase-actions">
+                <div class="qty" data-min="1" data-max="12">
+                  <button type="button" data-qty="minus" aria-label="Decrease quantity">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#minus"></use></svg>
+                  </button>
+                  <output data-qty-value>1</output>
+                  <button type="button" data-qty="plus" aria-label="Increase quantity">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                  </button>
+                </div>
+                <button class="btn btn--primary" type="button" data-add="Sunrise Whole Milk">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bag"></use></svg>
+                  Add to my box
+                </button>
+                <button class="icon-btn" type="button" data-wish="Sunrise Whole Milk" aria-label="Save Sunrise Whole Milk to wishlist">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pdp-notes">
+              <div class="pdp-note">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg>
+                Free delivery before 6:30 AM on orders placed before 9 PM.
+              </div>
+              <div class="pdp-note">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg>
+                Leave your empty bottles by the gate; we collect and refill.
+              </div>
+              <div class="pdp-note">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg>
+                If it doesn't arrive cold, we replace it without a question.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="detail">
+      <div class="container">
+        <div class="pdp-tabs" data-tabs>
+          <div class="pdp-tab-copy reveal">
+            <span class="eyebrow">Know your bottle</span>
+            <h2>The ordinary details that make it good.</h2>
+            <p>No additives, no shortcuts and no mystery. Here is what's in the bottle, where it comes from and what to do with it in the kitchen.</p>
+            <div class="page-hero__actions">
+              <a class="link-arrow" href="sourcing.html">Read our sourcing standards
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdp-tab-panels">
+            <div class="tabs" role="tablist" aria-label="Product details">
+              <button class="tab" type="button" role="tab" data-tab="story" aria-selected="true">The bottle</button>
+              <button class="tab" type="button" role="tab" data-tab="nutrition" aria-selected="false">Nutrition</button>
+              <button class="tab" type="button" role="tab" data-tab="kitchen" aria-selected="false">In the kitchen</button>
+            </div>
+            <div class="tab-panel" data-tab-panel="story">
+              <div class="pdp-tab-panel-inner">
+                <h3>From a named farm, not a map</h3>
+                <p>Each batch of Sunrise Whole Milk is collected from a single partner farm — usually Kannan's pasture in Anaikatti. The herd grazes on rotated grass and is never given growth hormones. We collect at 4:30 AM, chill to 4°C before 5:30, and gently pasteurise at 69°C. The cream line will rise overnight because we don't homogenise. Shake gently, don't stir hard.</p>
+                <div class="nutrition-grid">
+                  <div class="nutrition-cell"><strong>100%</strong><span>Whole milk</span></div>
+                  <div class="nutrition-cell"><strong>3.9%</strong><span>Natural fat</span></div>
+                  <div class="nutrition-cell"><strong>0</strong><span>Additives</span></div>
+                  <div class="nutrition-cell"><strong>7 days</strong><span>From filling</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-panel" data-tab-panel="nutrition" hidden>
+              <div class="pdp-tab-panel-inner">
+                <h3>Per 100 ml</h3>
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <caption class="sr-only">Nutrition information for Sunrise Whole Milk</caption>
+                    <tbody>
+                      <tr><th scope="row">Energy</th><td>67 kcal</td></tr>
+                      <tr><th scope="row">Total fat</th><td>3.9 g</td></tr>
+                      <tr><th scope="row">Saturated fat</th><td>2.4 g</td></tr>
+                      <tr><th scope="row">Protein</th><td>3.3 g</td></tr>
+                      <tr><th scope="row">Carbohydrates</th><td>4.8 g</td></tr>
+                      <tr><th scope="row">Calcium</th><td>122 mg</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="form-note">Contains milk. Keep refrigerated at 2–4°C. Consume within three days of opening.</p>
+              </div>
+            </div>
+            <div class="tab-panel" data-tab-panel="kitchen" hidden>
+              <div class="pdp-tab-panel-inner">
+                <h3>What we make with it at home</h3>
+                <ul class="check-list">
+                  <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Warm gently for a bedtime glass with honey and nutmeg.</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Simmer with cardamom and tea for a proper morning chai.</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Set overnight with a spoonful of curd for a fresh bowl at breakfast.</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Whisk into eggs for a softer, unhurried omelette.</li>
+                </ul>
+                <div class="page-hero__actions">
+                  <a class="btn btn--outline btn--sm" href="blog-details.html">Read The Sunday Pour recipe</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="farm">
+      <div class="container">
+        <div class="pdp-source">
+          <div class="pdp-source__media reveal reveal--left">
+            <img src="assets/images/pd-sourcing.jpg" alt="Kannan's pasture in Anaikatti where Sunrise Whole Milk is sourced" loading="lazy">
+            <div class="pdp-source__badge">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+              Batch farm · Anaikatti
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">Trace it back</span>
+            <h2>Meet batch MDAY-78-2611.</h2>
+            <p class="lead">This week's whole milk comes from a herd of 46 cows on the eastern slope of Anaikatti. The pasture was rested for 21 days before grazing, and the animals were milked at 4:35 AM.</p>
+            <div class="spotlight__facts">
+              <div class="spotlight__fact"><strong>Kannan</strong><span>Farmer · 8 years with us</span></div>
+              <div class="spotlight__fact"><strong>46</strong><span>Cows · HF and Gir cross</span></div>
+              <div class="spotlight__fact"><strong>21 days</strong><span>Pasture rest before grazing</span></div>
+              <div class="spotlight__fact"><strong>4:35 AM</strong><span>Milking this batch</span></div>
+            </div>
+            <div class="stack-sm" style="margin-top:1.3rem;">
+              <span class="field-label">Batch code</span>
+              <button class="btn btn--outline btn--sm" type="button" data-copy="MDAY-78-2611" style="width:fit-content;">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#copy"></use></svg>
+                Copy MDAY-78-2611
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="recipes">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Three small recipes</span>
+            <h2 class="section-title">One bottle, a whole day of good things.</h2>
+          </div>
+          <p class="section-copy">From the Meadowly kitchen. Each recipe uses less than a litre and asks for very little.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="recipe-card reveal">
+            <div class="recipe-card__media">
+              <img src="assets/images/pd-recipe-curry.jpg" alt="A creamy curry made with whole milk" loading="lazy">
+            </div>
+            <span class="recipe-card__num">01</span>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>30 min</span><span>·</span><span>Serves 4</span></div>
+              <h3><a href="blog-details.html">The gentle milk curry</a></h3>
+              <p>Simmered with turmeric, cashew and a little gingelly oil. The milk does the quiet work.</p>
+            </div>
+          </article>
+          <article class="recipe-card reveal">
+            <div class="recipe-card__media">
+              <img src="assets/images/pd-recipe-chilli.jpg" alt="A bowl of milk-poached chilli" loading="lazy">
+            </div>
+            <span class="recipe-card__num">02</span>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>15 min</span><span>·</span><span>Serves 2</span></div>
+              <h3><a href="blog-details.html">Milk-poached chillies</a></h3>
+              <p>A soft, surprising side for parathas and rice. The heat stays, the sharpness goes.</p>
+            </div>
+          </article>
+          <article class="recipe-card reveal">
+            <div class="recipe-card__media">
+              <img src="assets/images/pd-recipe-burger.jpg" alt="A breakfast burger with a milk-brushed bun" loading="lazy">
+            </div>
+            <span class="recipe-card__num">03</span>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>25 min</span><span>·</span><span>Serves 2</span></div>
+              <h3><a href="blog-details.html">The Sunday milk bun</a></h3>
+              <p>Brush warm buns with milk before the oven. Softness, shine and a little old-fashioned joy.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="review-summary reveal">
+            <div class="review-score">
+              <strong>4.9</strong>
+              <div class="rating__stars" aria-label="4.9 out of 5 stars">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+              </div>
+              <span>842 verified reviews</span>
+            </div>
+            <div class="review-bars">
+              <div class="review-bar"><span>5 star</span><div class="review-bar__track"><div class="review-bar__fill" style="width:88%"></div></div><span>88%</span></div>
+              <div class="review-bar"><span>4 star</span><div class="review-bar__track"><div class="review-bar__fill" style="width:9%"></div></div><span>9%</span></div>
+              <div class="review-bar"><span>3 star</span><div class="review-bar__track"><div class="review-bar__fill" style="width:2%"></div></div><span>2%</span></div>
+              <div class="review-bar"><span>2 star</span><div class="review-bar__track"><div class="review-bar__fill" style="width:1%"></div></div><span>1%</span></div>
+              <div class="review-bar"><span>1 star</span><div class="review-bar__track"><div class="review-bar__fill" style="width:0%"></div></div><span>0%</span></div>
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">What homes say</span>
+            <h2 class="section-title">The morning bottle, in their words.</h2>
+            <p class="section-copy">Verified subscribers from the first route to the newest one.</p>
+            <div class="page-hero__actions">
+              <button class="btn btn--outline btn--sm" type="button" data-demo>Write a review</button>
+            </div>
+          </div>
+        </div>
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="review-card__top">
+              <div class="review-card__person">
+                <span class="avatar"><img src="assets/images/avatar-review-1.jpg" alt="Portrait of Ahalya S." loading="lazy"></span>
+                <div><strong>Ahalya S.</strong><span>Vadavalli · 3 years</span></div>
+              </div>
+              <div class="rating__stars" aria-label="5 out of 5 stars">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+              </div>
+            </div>
+            <blockquote>“It tastes like the milk I remember from my grandmother's kitchen. My children now ask for the glass bottle by name.”</blockquote>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-card__top">
+              <div class="review-card__person">
+                <span class="avatar"><img src="assets/images/avatar-review-2.jpg" alt="Portrait of Karthik R." loading="lazy"></span>
+                <div><strong>Karthik R.</strong><span>Race Course · 1 year</span></div>
+              </div>
+              <div class="rating__stars" aria-label="5 out of 5 stars">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+              </div>
+            </div>
+            <blockquote>“The cream line is the giveaway. It actually behaves like whole milk. My filter coffee has never been better.”</blockquote>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-card__top">
+              <div class="review-card__person">
+                <span class="avatar"><img src="assets/images/avatar-review-3.jpg" alt="Portrait of Shalini M." loading="lazy"></span>
+                <div><strong>Shalini M.</strong><span>Saibaba Colony · 8 months</span></div>
+              </div>
+              <div class="rating__stars" aria-label="4 out of 5 stars">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#star"></use></svg>
+              </div>
+            </div>
+            <blockquote>“Fresh, cold and always on time. I only wish the two-litre bottle sold out less often. Small complaint from a happy house.”</blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="goes-with">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Goes with the pour</span>
+            <h2 class="section-title">A few more from the pantry.</h2>
+          </div>
+          <div class="section-head__actions">
+            <a class="btn btn--outline btn--sm" href="products.html">See all products</a>
+          </div>
+        </div>
+        <div class="product-grid">
+          <article class="product-card product-card--compact reveal">
+            <div class="product-card__media">
+              <img src="assets/images/pd-related-milk.jpg" alt="A second bottle of Meadowly milk" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__cat">Milk</span>
+              <h3 class="product-card__title"><a href="product-details.html">A2 Gir Cow Milk</a></h3>
+              <div class="product-card__meta">
+                <span class="product-card__price">₹118 <small>/ litre</small></span>
+                <span class="catalog-count">4.9 ★</span>
+              </div>
+            </div>
+          </article>
+          <article class="product-card product-card--compact reveal">
+            <div class="product-card__media">
+              <img src="assets/images/pd-related-cheese.jpg" alt="Aged cheddar on a wooden board" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__cat">Cheese</span>
+              <h3 class="product-card__title"><a href="product-details.html">Aged Cheddar</a></h3>
+              <div class="product-card__meta">
+                <span class="product-card__price">₹320 <small>/ 200 g</small></span>
+                <span class="catalog-count">4.7 ★</span>
+              </div>
+            </div>
+          </article>
+          <article class="product-card product-card--compact reveal">
+            <div class="product-card__media">
+              <img src="assets/images/pd-related-butter.jpg" alt="Cultured white butter in a dish" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__cat">Butter</span>
+              <h3 class="product-card__title"><a href="product-details.html">Cultured White Butter</a></h3>
+              <div class="product-card__meta">
+                <span class="product-card__price">₹185 <small>/ 200 g</small></span>
+                <span class="catalog-count">4.9 ★</span>
+              </div>
+            </div>
+          </article>
+          <article class="product-card product-card--compact reveal">
+            <div class="product-card__media">
+              <img src="assets/images/pd-related-yogurt.jpg" alt="A bowl of thick Greek yogurt" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__cat">Yogurt</span>
+              <h3 class="product-card__title"><a href="product-details.html">Greek Yogurt</a></h3>
+              <div class="product-card__meta">
+                <span class="product-card__price">₹96 <small>/ 400 g</small></span>
+                <span class="catalog-count">4.7 ★</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

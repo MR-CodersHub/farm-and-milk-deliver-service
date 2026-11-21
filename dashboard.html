@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Dashboard — Meadowly Dairy Co.</title>
+  <meta name="description" content="Your Meadowly morning dashboard: next delivery, box contents, delivery calendar, orders, invoices and account preferences.">
+  <meta property="og:title" content="Morning Dashboard — Meadowly Dairy Co.">
+  <meta property="og:description" content="Your next delivery, morning box, calendar, invoices and account preferences in one quiet place.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#28543B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body class="app-body" data-page="dashboard">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="appSidebar" aria-label="Dashboard navigation">
+      <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="brand-logo-svg"><use href="assets/icons.svg#brand-logo"></use></svg>
+        </span>
+        <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span>
+      </a>
+      <div>
+        <span class="app-sidebar__label">My morning</span>
+        <nav class="app-nav" aria-label="Dashboard sections">
+          <a class="app-nav__link is-active" href="#overview">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#home"></use></svg>
+            Overview
+          </a>
+          <a class="app-nav__link" href="#calendar">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#calendar"></use></svg>
+            Delivery calendar
+          </a>
+          <a class="app-nav__link" href="#morning-box">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#box"></use></svg>
+            My morning box
+            <span class="app-nav__badge">3</span>
+          </a>
+          <a class="app-nav__link" href="#orders">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#credit-card"></use></svg>
+            Orders &amp; invoices
+          </a>
+          <span class="app-sidebar__label">Account</span>
+          <a class="app-nav__link" href="#delivery-details">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+            Delivery details
+          </a>
+          <a class="app-nav__link" href="#preferences">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"></use></svg>
+            Preferences &amp; billing
+          </a>
+        </nav>
+      </div>
+      <div class="app-sidebar__bottom">
+        <div class="sidebar-card">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg>
+          <strong>Need a hand?</strong>
+          <p>The care desk is open every day, 7 AM to 8 PM.</p>
+          <a href="tel:+914224001880">Call the desk
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+        </div>
+        <a class="btn btn--outline btn--sm" href="login.html">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#logout"></use></svg>
+          Sign out
+        </a>
+      </div>
+    </aside>
+    <div class="app-backdrop" data-app-backdrop></div>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar__copy">
+          <button class="app-mobile-toggle" type="button" data-app-menu aria-controls="appSidebar" aria-expanded="false" aria-label="Open dashboard menu">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+          </button>
+          <div>
+            <p>Wednesday, 18 November</p>
+            <h1>Good morning, Meera.</h1>
+          </div>
+        </div>
+        <div class="app-topbar__actions">
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#moon"></use></svg>
+          </button>
+          <button class="icon-btn rtl-toggle" type="button" data-dir-toggle aria-label="Switch direction">
+            <span data-dir-label>RTL</span>
+          </button>
+          <div class="notif-wrap">
+            <button class="icon-btn" type="button" data-notif-toggle aria-expanded="false" aria-controls="notifPanel" aria-label="Notifications">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg>
+              <span class="notif-dot" aria-hidden="true"></span>
+            </button>
+            <div class="notif-panel" id="notifPanel" data-notif-panel>
+              <div class="notif-panel__head">
+                <strong>Morning notes</strong>
+                <button type="button" data-dash-action="Notifications cleared">Clear all</button>
+              </div>
+              <div class="dash-list">
+                <div class="dash-row">
+                  <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg></span>
+                  <div class="dash-row__copy"><strong>Route confirmed</strong><span>Saturday's bottles are packed.</span></div>
+                  <time datetime="2026-11-18">1h</time>
+                </div>
+                <div class="dash-row">
+                  <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg></span>
+                  <div class="dash-row__copy"><strong>New batch note</strong><span>Gir herd, Anaikatti · 18 Nov.</span></div>
+                  <time datetime="2026-11-18">3h</time>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="icon-btn" href="products.html" aria-label="Add products to your box">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bag"></use></svg>
+          </a>
+          <a class="app-user" href="#preferences">
+            <span class="avatar">MR</span>
+            <span>
+              <strong>Meera R.</strong>
+              <span>Family Table</span>
+            </span>
+          </a>
+        </div>
+      </header>
+
+      <main class="app-content" id="main">
+        <section class="app-section" id="overview" aria-labelledby="overview-title">
+          <div class="app-page-head">
+            <div>
+              <span class="eyebrow">Your morning at a glance</span>
+              <h2 id="overview-title">Everything is in order.</h2>
+              <p>Two bottles, one curd and a little butter are on the way this Saturday. Nothing needs your attention today.</p>
+            </div>
+            <div class="app-page-head__actions">
+              <a class="btn btn--outline btn--sm" href="products.html">Add to my box</a>
+              <button class="btn btn--primary btn--sm" type="button" data-dash-action="Delivery rescheduled">Reschedule delivery</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" style="margin-top:1.2rem;">
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg></span>
+                <span class="kpi-card__trend">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check-circle"></use></svg>
+                  On route
+                </span>
+              </div>
+              <strong>3 days</strong>
+              <p>Until your next delivery · <span>Sat</span></p>
+            </div>
+            <div class="kpi-card kpi-card--butter reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#milk"></use></svg></span>
+                <span class="kpi-card__trend">Nov</span>
+              </div>
+              <strong>18</strong>
+              <p>Bottles this month · <span>6 returns</span></p>
+            </div>
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#calendar"></use></svg></span>
+                <span class="kpi-card__trend">Next cut-off</span>
+              </div>
+              <strong>9 PM</strong>
+              <p>Friday for Saturday · <span>2 changes left</span></p>
+            </div>
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg></span>
+                <span class="kpi-card__trend">Glass loop</span>
+              </div>
+              <strong>24</strong>
+              <p>Bottles returned this year · <span>100%</span></p>
+            </div>
+          </div>
+
+          <div class="delivery-banner" style="margin-top:1.1rem;">
+            <div>
+              <span class="badge badge--butter">Next delivery</span>
+              <h3>Your next bottle · <span data-next-delivery>Sat, 21 Nov</span></h3>
+              <p>Your standing box, exactly as you left it. The rider will leave it inside the gate and collect the empty bottles.</p>
+              <div class="delivery-banner__meta">
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg>5:30–6:30 AM</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#box"></use></svg>3 items</span>
+                <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>Saibaba Colony</span>
+              </div>
+              <div class="page-hero__actions" style="margin-top:1rem;">
+                <a class="btn btn--butter btn--sm" href="#calendar">Manage schedule</a>
+                <a class="link-arrow" href="#morning-box" style="color:var(--cream);">Review the box
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="delivery-banner__badge">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg>
+              <strong>03</strong>
+              <span>Days</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="calendar" aria-labelledby="calendar-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Plan the week</span>
+              <h2 id="calendar-title">Delivery calendar</h2>
+              <p>Tap any future delivery day to pause it. Changes close at 9 PM the evening before.</p>
+            </div>
+            <span class="status">3 mornings a week</span>
+          </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3 data-calendar-month>November 2026</h3>
+                  <p>Green dots are delivery days.</p>
+                </div>
+                <div class="table-actions">
+                  <button class="icon-btn" type="button" data-calendar-prev aria-label="Previous month">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-left"></use></svg>
+                  </button>
+                  <button class="icon-btn" type="button" data-calendar-next aria-label="Next month">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="calendar">
+                  <div class="calendar__weekdays" aria-hidden="true">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                  </div>
+                  <div class="calendar__grid" id="deliveryCalendar"></div>
+                  <div class="calendar-legend">
+                    <span><i aria-hidden="true"></i>Delivery day</span>
+                    <span><i class="is-paused-key" aria-hidden="true"></i>Paused</span>
+                    <span><i class="is-today-key" aria-hidden="true"></i>Today</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>This week's rhythm</h3>
+                  <p>Tap a quick action to adjust one morning.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="schedule-list">
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy">
+                      <strong>Saturday, 21 Nov</strong>
+                      <span>Whole milk ×2 · Curd ×1 · Butter ×1</span>
+                    </div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-schedule-action="pause" aria-label="Pause Saturday delivery" title="Pause Saturday">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg>
+                      </button>
+                      <button class="icon-btn" type="button" data-schedule-action="double" aria-label="Double Saturday delivery" title="Double Saturday">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy">
+                      <strong>Monday, 23 Nov</strong>
+                      <span>Weekly reset · same standing box</span>
+                    </div>
+                    <div class="schedule-item__actions">
+                      <span class="status">Confirmed</span>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy">
+                      <strong>Wednesday, 25 Nov</strong>
+                      <span>Weekly reset · same standing box</span>
+                    </div>
+                    <div class="schedule-item__actions">
+                      <span class="status status--muted">Cut-off Tue</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Deliveries are Monday, Wednesday and Saturday mornings.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="morning-box" aria-labelledby="box-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Your standing order</span>
+              <h2 id="box-title">My morning box</h2>
+              <p>Adjust quantities here. The total updates as you go.</p>
+            </div>
+            <a class="link-arrow" href="products.html">Add something new
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+            </a>
+          </div>
+          <div class="dash-grid--even dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Next box · Saturday</h3>
+                  <p>Changes close Friday at 9 PM.</p>
+                </div>
+                <a class="btn btn--outline btn--sm" href="products.html">Edit items</a>
+              </div>
+              <div class="panel__body">
+                <div class="box-list">
+                  <div class="box-item" data-price="78">
+                    <span class="box-item__thumb"><img src="assets/images/dash-milk.jpg" alt="A bottle of Meadowly whole milk" loading="lazy"></span>
+                    <div class="box-item__copy">
+                      <strong>Sunrise Whole Milk</strong>
+                      <span>1 L glass bottle · ₹78</span>
+                    </div>
+                    <div class="qty" data-min="1" data-max="9">
+                      <button type="button" data-qty="minus" aria-label="Reduce whole milk">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#minus"></use></svg>
+                      </button>
+                      <output data-qty-value>2</output>
+                      <button type="button" data-qty="plus" aria-label="Add whole milk">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-item" data-price="120">
+                    <span class="box-item__thumb"><img src="assets/images/dash-curd.jpg" alt="A bowl of hand-set Meadowly curd" loading="lazy"></span>
+                    <div class="box-item__copy">
+                      <strong>Hand-Set Curd</strong>
+                      <span>500 g clay pot · ₹120</span>
+                    </div>
+                    <div class="qty" data-min="1" data-max="9">
+                      <button type="button" data-qty="minus" aria-label="Reduce curd">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#minus"></use></svg>
+                      </button>
+                      <output data-qty-value>1</output>
+                      <button type="button" data-qty="plus" aria-label="Add curd">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-item" data-price="240">
+                    <span class="box-item__thumb"><img src="assets/images/dash-butter.jpg" alt="Cultured white butter in a ceramic dish" loading="lazy"></span>
+                    <div class="box-item__copy">
+                      <strong>Cultured White Butter</strong>
+                      <span>250 g · ₹240</span>
+                    </div>
+                    <div class="qty" data-min="1" data-max="6">
+                      <button type="button" data-qty="minus" aria-label="Reduce butter">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#minus"></use></svg>
+                      </button>
+                      <output data-qty-value>1</output>
+                      <button type="button" data-qty="plus" aria-label="Add butter">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-summary">
+                  <span>Estimated box total</span>
+                  <strong data-box-total>₹516</strong>
+                </div>
+              </div>
+              <div class="panel__footer">Bottles are returnable. Leave empties at the door and the rider will collect them.</div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Your rhythm</h3>
+                  <p>A standing order, not a subscription trap.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="schedule-list">
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Every Monday</strong><span>Whole milk, curd, butter</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-dash-action="Monday rhythm updated" aria-label="Edit Monday rhythm">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Every Wednesday</strong><span>Whole milk, curd, butter</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-dash-action="Wednesday rhythm updated" aria-label="Edit Wednesday rhythm">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Every Saturday</strong><span>Whole milk, curd, butter</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-dash-action="Saturday rhythm updated" aria-label="Edit Saturday rhythm">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Need a pause? Tap any date in the calendar above.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="orders" aria-labelledby="orders-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Paperwork, without the paper</span>
+              <h2 id="orders-title">Orders &amp; invoices</h2>
+              <p>Everything you've had, and everything that's coming.</p>
+            </div>
+            <button class="btn btn--outline btn--sm" type="button" data-dash-action="Statement requested">Request a statement</button>
+          </div>
+          <div class="order-tabs" role="tablist" aria-label="Order history">
+            <button class="order-tab" type="button" role="tab" id="tabUpcoming" aria-selected="true" aria-controls="panelUpcoming" data-order-tab="upcoming">Upcoming</button>
+            <button class="order-tab" type="button" role="tab" id="tabPast" aria-selected="false" aria-controls="panelPast" data-order-tab="past">Past deliveries</button>
+            <button class="order-tab" type="button" role="tab" id="tabInvoices" aria-selected="false" aria-controls="panelInvoices" data-order-tab="invoices">Invoices</button>
+          </div>
+          <div class="order-panel is-active" role="tabpanel" id="panelUpcoming" aria-labelledby="tabUpcoming" data-order-panel="upcoming">
+            <div class="panel" style="margin-top:1rem;">
+              <div class="panel__body">
+                <div class="invoice-list">
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Saturday, 21 November</strong><span>#MW-1192 · 3 items · 2 bottles</span></div>
+                    <strong>₹516</strong>
+                    <span class="status">Packed</span>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Monday, 23 November</strong><span>#MW-1198 · 3 items · 2 bottles</span></div>
+                    <strong>₹516</strong>
+                    <span class="status status--muted">Confirmed</span>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Wednesday, 25 November</strong><span>#MW-1205 · 3 items · 2 bottles</span></div>
+                    <strong>₹516</strong>
+                    <span class="status status--muted">Cut-off Tuesday</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-panel" role="tabpanel" id="panelPast" aria-labelledby="tabPast" data-order-panel="past">
+            <div class="panel" style="margin-top:1rem;">
+              <div class="panel__body">
+                <div class="invoice-list">
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Wednesday, 18 November</strong><span>#MW-1184 · 3 items · delivered at 5:42 AM</span></div>
+                    <strong>₹516</strong>
+                    <span class="status">Delivered</span>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Monday, 16 November</strong><span>#MW-1176 · 2 items · delivered at 5:38 AM</span></div>
+                    <strong>₹438</strong>
+                    <span class="status">Delivered</span>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>Saturday, 14 November</strong><span>#MW-1169 · 3 items · delivered at 5:50 AM</span></div>
+                    <strong>₹516</strong>
+                    <span class="status">Delivered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-panel" role="tabpanel" id="panelInvoices" aria-labelledby="tabInvoices" data-order-panel="invoices">
+            <div class="panel" style="margin-top:1rem;">
+              <div class="panel__body">
+                <div class="invoice-list">
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>November 2026</strong><span>INV-2026-11 · month to date</span></div>
+                    <strong>₹4,128</strong>
+                    <button class="icon-btn" type="button" data-download="INV-2026-11 November 2026" aria-label="Download November invoice">
+                      <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+                    </button>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>October 2026</strong><span>INV-2026-10 · paid</span></div>
+                    <strong>₹3,960</strong>
+                    <button class="icon-btn" type="button" data-download="INV-2026-10 October 2026" aria-label="Download October invoice">
+                      <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+                    </button>
+                  </div>
+                  <div class="invoice-row">
+                    <div class="invoice-row__copy"><strong>September 2026</strong><span>INV-2026-09 · paid</span></div>
+                    <strong>₹3,870</strong>
+                    <button class="icon-btn" type="button" data-download="INV-2026-09 September 2026" aria-label="Download September invoice">
+                      <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="delivery-details" aria-labelledby="delivery-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Where the bottle goes</span>
+              <h2 id="delivery-title">Delivery details</h2>
+              <p>Update your address, gate notes or contact number. Changes apply from the next cut-off.</p>
+            </div>
+          </div>
+          <div class="dash-grid--wide dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Primary address</h3>
+                  <p>This is where every standing order goes.</p>
+                </div>
+                <span class="badge badge--butter">Primary</span>
+              </div>
+              <div class="panel__body">
+                <div class="address-card">
+                  <div class="address-card__top">
+                    <strong>Meera Raghunathan</strong>
+                    <span class="badge">Home</span>
+                  </div>
+                  <p>14, Lake View Garden, Saibaba Colony,<br>Coimbatore, Tamil Nadu 641 011</p>
+                  <p>+91 98765 43210 · Gate code 1204</p>
+                </div>
+                <form class="app-form" id="deliveryForm" action="#" method="post" style="margin-top:1.1rem;">
+                  <div class="form-grid">
+                    <div class="field">
+                      <label for="dashRecipient">Recipient</label>
+                      <input id="dashRecipient" type="text" name="recipient" value="Meera Raghunathan" autocomplete="name">
+                    </div>
+                    <div class="field">
+                      <label for="dashPhone">Mobile</label>
+                      <input id="dashPhone" type="tel" name="phone" value="+91 98765 43210" autocomplete="tel">
+                    </div>
+                    <div class="field field--full">
+                      <label for="dashAddress">Delivery address</label>
+                      <textarea id="dashAddress" name="address" rows="3">14, Lake View Garden, Saibaba Colony, Coimbatore 641 011</textarea>
+                    </div>
+                    <div class="field">
+                      <label for="dashPincode">Pincode</label>
+                      <input id="dashPincode" type="text" name="pincode" value="641011" inputmode="numeric" autocomplete="postal-code" maxlength="6">
+                    </div>
+                    <div class="field">
+                      <label for="dashGate">Gate / route note</label>
+                      <input id="dashGate" type="text" name="gate" value="Leave inside the gate; collect empties">
+                    </div>
+                  </div>
+                  <button class="btn btn--primary btn--sm" type="submit">Save delivery details</button>
+                </form>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Next few mornings</h3>
+                  <p>Tap to pause or double one delivery.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="schedule-list">
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Sat, 21 Nov</strong><span>5:30–6:30 AM · 3 items</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-schedule-action="pause" aria-label="Pause Saturday delivery">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg>
+                      </button>
+                      <button class="icon-btn" type="button" data-schedule-action="double" aria-label="Double Saturday delivery">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plus"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Mon, 23 Nov</strong><span>5:30–6:30 AM · 3 items</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-schedule-action="pause" aria-label="Pause Monday delivery">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Wed, 25 Nov</strong><span>5:30–6:30 AM · 3 items</span></div>
+                    <div class="schedule-item__actions">
+                      <button class="icon-btn" type="button" data-schedule-action="pause" aria-label="Pause Wednesday delivery">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Route changes close at 9 PM the evening before.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="preferences" aria-labelledby="preferences-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">The small settings</span>
+              <h2 id="preferences-title">Preferences &amp; billing</h2>
+              <p>Your plan, payment method and the notes you'd like to receive.</p>
+            </div>
+          </div>
+          <div class="dash-grid--even dash-grid">
+            <div class="billing-card">
+              <span class="badge badge--butter">Family Table</span>
+              <h3 style="margin-top:.8rem;">₹2,490 / month</h3>
+              <p style="margin-top:.35rem; font-size:.7rem;">Three mornings a week, up to 3 items per delivery. Annual billing saves ₹4,980.</p>
+              <div class="billing-card__row"><span>Next charge</span><strong>1 December 2026</strong></div>
+              <div class="billing-card__row"><span>Payment method</span><strong>Visa ···· 4242</strong></div>
+              <div class="billing-card__row"><span>Member since</span><strong>March 2023</strong></div>
+              <div class="billing-card__actions">
+                <button class="btn btn--butter btn--sm" type="button" data-dash-action="Payment method updated">Update payment</button>
+                <button class="btn btn--outline btn--sm" type="button" data-download="INV-2026-11 November 2026">Latest invoice</button>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Morning preferences</h3>
+                  <p>Tell us what is useful. We keep it quiet.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <form class="app-form" id="preferencesForm" action="#" method="post">
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Delivery reminder</strong><span>The evening before each box.</span></div>
+                    <label class="toggle-switch"><input type="checkbox" name="reminders" checked aria-label="Delivery reminder"><span>On</span></label>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>Batch notes</strong><span>Farm, collection date and quality notes.</span></div>
+                    <label class="toggle-switch"><input type="checkbox" name="batches" checked aria-label="Batch notes"><span>On</span></label>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>The Sunday Pour</strong><span>One quiet letter a week.</span></div>
+                    <label class="toggle-switch"><input type="checkbox" name="journal" aria-label="Sunday Pour newsletter"><span>Off</span></label>
+                  </div>
+                  <div class="schedule-item">
+                    <div class="schedule-item__copy"><strong>SMS on delivery day</strong><span>A note when the rider is close.</span></div>
+                    <label class="toggle-switch"><input type="checkbox" name="sms" aria-label="SMS on delivery day"><span>Off</span></label>
+                  </div>
+                  <button class="btn btn--primary btn--sm" type="submit">Save preferences</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

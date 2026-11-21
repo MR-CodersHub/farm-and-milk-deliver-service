@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sunday Pour — Meadowly Journal</title>
+  <meta name="description" content="Farm notes, kitchen rituals and small observations from Meadowly Dairy Co. Read The Sunday Pour, a quiet journal about milk, pasture and the people who care for both.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="The Sunday Pour — Meadowly Journal">
+  <meta property="og:description" content="A quiet weekly letter from a working dairy in Coimbatore.">
+  <meta property="og:image" content="assets/images/blog-featured.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="blog">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="section section--tight" id="journal">
+      <div class="container">
+        <article class="post-featured reveal">
+          <div class="post-featured__media">
+            <img src="assets/images/blog-featured.jpg" alt="A notebook, glass of milk and farm flowers on a table" fetchpriority="high">
+            <span class="badge badge--butter" style="position:absolute; top:1rem; inset-inline-start:1rem; z-index:2;">Latest issue</span>
+          </div>
+          <div class="post-featured__body">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+              <span aria-current="page">The journal</span>
+            </nav>
+            <span class="eyebrow">The Sunday Pour · No. 47</span>
+            <h1>A quiet letter from a working dairy.</h1>
+            <p>Farm notes, recipes and small observations from the meadow. We write slowly, once a week, about the things that make a morning taste like itself.</p>
+            <div class="post-featured__meta">
+              <span>Every Sunday</span>
+              <span>·</span>
+              <span>New issue</span>
+              <span>·</span>
+              <span>Nila Thomas, Editor</span>
+            </div>
+            <div class="post-feature-link">
+              <span class="eyebrow">In this issue</span>
+              <h2><a href="blog-details.html">The first milking tastes different. Here's why.</a></h2>
+              <a class="link-arrow" href="blog-details.html">Read the story
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="editors-picks">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">From the editor's shelf</span>
+            <h2 class="section-title">Three worth lingering over.</h2>
+          </div>
+          <div class="section-head__actions">
+            <a class="link-arrow" href="#journal-grid">Browse all stories
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="editor-pick-grid">
+          <a class="editor-pick reveal" href="blog-details.html">
+            <img src="assets/images/blog-editor-1.jpg" alt="A seasonal table with greens and dairy" loading="lazy">
+            <div class="editor-pick__body">
+              <span>Field notes</span>
+              <h3>The quiet case for eating seasonally</h3>
+              <p>5 min read · Nila Thomas</p>
+            </div>
+          </a>
+          <a class="editor-pick reveal" href="blog-details.html">
+            <img src="assets/images/blog-editor-2.jpg" alt="A glass of whey beside a bowl of curd" loading="lazy">
+            <div class="editor-pick__body">
+              <span>Kitchen</span>
+              <h3>Three things to do with whey</h3>
+              <p>4 min read · Kavya Subramani</p>
+            </div>
+          </a>
+          <a class="editor-pick reveal" href="blog-details.html">
+            <img src="assets/images/blog-editor-3.jpg" alt="A delivery rider on a quiet early morning road" loading="lazy">
+            <div class="editor-pick__body">
+              <span>Farm notes</span>
+              <h3>Why our route starts at 4:10</h3>
+              <p>6 min read · Arjun Menon</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journal-grid">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">All stories</span>
+            <h2 class="section-title">The full shelf.</h2>
+          </div>
+          <div class="section-head__actions">
+            <a class="link-arrow" href="blog-details.html">Start with the latest
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="products-toolbar">
+          <div class="filter-chips" role="group" aria-label="Filter journal stories">
+            <button class="filter-chip is-active" type="button" data-blog-filter="all" aria-pressed="true">All stories</button>
+            <button class="filter-chip" type="button" data-blog-filter="farm" aria-pressed="false">Farm notes</button>
+            <button class="filter-chip" type="button" data-blog-filter="kitchen" aria-pressed="false">Kitchen</button>
+            <button class="filter-chip" type="button" data-blog-filter="people" aria-pressed="false">People</button>
+            <button class="filter-chip" type="button" data-blog-filter="notes" aria-pressed="false">Field notes</button>
+          </div>
+          <p class="catalog-count" id="blogCount" aria-live="polite">9 stories</p>
+        </div>
+        <div class="post-grid" id="blogGrid">
+          <article class="post-card reveal" data-blog-category="farm">
+            <div class="post-card__media">
+              <span class="badge badge--butter post-card__cat">Farm notes</span>
+              <img src="assets/images/blog-1.jpg" alt="Milking at sunrise at a Meadowly partner farm" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>16 Nov 2026</span><span class="dot"></span><span>5 min read</span></div>
+              <h3><a href="blog-details.html">The first milking tastes different. Here's why.</a></h3>
+              <p>It isn't romance. It's grass, temperature and the quietest hours of the day.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="kitchen">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Kitchen</span>
+              <img src="assets/images/blog-2.jpg" alt="A slow weekend brunch with dairy and fruit" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>9 Nov 2026</span><span class="dot"></span><span>6 min read</span></div>
+              <h3><a href="blog-details.html">A brunch whose only rule is to sit down.</a></h3>
+              <p>Toasted sourdough, cultured butter, curd with fruit. That is the whole plan.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="notes">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Field notes</span>
+              <img src="assets/images/blog-3.jpg" alt="Returnable glass bottles lined up after washing" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>2 Nov 2026</span><span class="dot"></span><span>4 min read</span></div>
+              <h3><a href="blog-details.html">The glass bottle is not nostalgia. It's logistics.</a></h3>
+              <p>A small loop, repeated well, can change more than a big promise ever will.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="farm">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Farm notes</span>
+              <img src="assets/images/blog-4.jpg" alt="Gir cows grazing in a shaded pasture" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>26 Oct 2026</span><span class="dot"></span><span>7 min read</span></div>
+              <h3><a href="blog-details.html">A day with the Gir herd, in seven small moments.</a></h3>
+              <p>What a dairy looks like when nobody is arranging it for a camera.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="kitchen">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Kitchen</span>
+              <img src="assets/images/blog-5.jpg" alt="Curd setting in a ceramic bowl" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>19 Oct 2026</span><span class="dot"></span><span>5 min read</span></div>
+              <h3><a href="blog-details.html">Set curd without a thermometer (and without fear).</a></h3>
+              <p>Your grandmother was not measuring temperature. She was reading the room.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="people">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">People</span>
+              <img src="assets/images/blog-6.jpg" alt="Meadowly delivery team on the morning route" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>12 Oct 2026</span><span class="dot"></span><span>6 min read</span></div>
+              <h3><a href="blog-details.html">The women who run the morning route.</a></h3>
+              <p>Meet the people who know exactly which gate sticks and which dog is friendly.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="notes">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Field notes</span>
+              <img src="assets/images/blog-7.jpg" alt="Mist over the pasture before dawn" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>5 Oct 2026</span><span class="dot"></span><span>3 min read</span></div>
+              <h3><a href="blog-details.html">What pasture actually smells like at 4:30 AM.</a></h3>
+              <p>Not lavender. Wet grass, earth and something close to a good breakfast.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="kitchen">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">Kitchen</span>
+              <img src="assets/images/blog-8.jpg" alt="A cheese board with fruit and crackers" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>28 Sep 2026</span><span class="dot"></span><span>4 min read</span></div>
+              <h3><a href="blog-details.html">A cheese board for a hot Coimbatore evening.</a></h3>
+              <p>Cold cheddar, ripe mango and a little patience with the crackers.</p>
+            </div>
+          </article>
+          <article class="post-card reveal" data-blog-category="people">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">People</span>
+              <img src="assets/images/blog-9.jpg" alt="A farmer carrying a milk pail through the field" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>21 Sep 2026</span><span class="dot"></span><span>5 min read</span></div>
+              <h3><a href="blog-details.html">The farmer who taught us patience, one pail at a time.</a></h3>
+              <p>Kannan has been getting up before us for eight years. This is his morning.</p>
+            </div>
+          </article>
+        </div>
+        <div class="empty-state" id="blogEmpty">
+          <h3>No stories in that basket yet.</h3>
+          <p>Try “farm”, “kitchen” or clear the filter to read everything.</p>
+        </div>
+        <div class="center" style="margin-top:2rem;">
+          <button class="btn btn--outline" type="button" id="blogLoadMore">Read a few more stories</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="editor">
+      <div class="container">
+        <div class="editor-spotlight">
+          <div class="editor-spotlight__visual reveal reveal--left">
+            <img src="assets/images/blog-editor.jpg" alt="The Meadowly journal notebook and pen on a desk" loading="lazy">
+            <img src="assets/images/blog-author.jpg" alt="Portrait of Nila Thomas, editor of The Sunday Pour" loading="lazy">
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">A note from the editor</span>
+            <h2>We write the way we milk: slowly, and with attention.</h2>
+            <p class="lead">The Sunday Pour began as a one-page note tucked into the first delivery bags. It is still a letter, not a content calendar. If a week has nothing worth saying, we don't say it.</p>
+            <p>We write about what we know: the herd, the kitchen, the route and the small decisions that don't fit on a label. Sometimes there is a recipe. Often there is a farmer.</p>
+            <div class="editor-signature">Nila Thomas</div>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="blog-details.html">Read the current issue</a>
+              <a class="link-arrow" href="contact.html">Write to Nila
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Read by theme</span>
+            <h2 class="section-title">Three shelves to begin with.</h2>
+          </div>
+          <p class="section-copy">A small collection of stories for whichever kind of morning you're having.</p>
+        </div>
+        <div class="collection-grid">
+          <a class="collection-card reveal" href="blog-details.html">
+            <img src="assets/images/blog-collection-1.jpg" alt="A breakfast table with milk, curd and fruit" loading="lazy">
+            <div class="collection-card__top"><span>The breakfast shelf</span><span>8 stories</span></div>
+            <div class="collection-card__body">
+              <h3>Slow mornings</h3>
+              <p>For the days that begin with a table, not a to-do list.</p>
+            </div>
+          </a>
+          <a class="collection-card reveal" href="blog-details.html">
+            <img src="assets/images/blog-collection-2.jpg" alt="A kitchen counter with dairy and a recipe book" loading="lazy">
+            <div class="collection-card__top"><span>The kitchen shelf</span><span>12 stories</span></div>
+            <div class="collection-card__body">
+              <h3>The useful kitchen</h3>
+              <p>Recipes that ask more of your attention than your pantry.</p>
+            </div>
+          </a>
+          <a class="collection-card reveal" href="blog-details.html">
+            <img src="assets/images/blog-collection-3.jpg" alt="A farm notebook and pencil beside pasture" loading="lazy">
+            <div class="collection-card__top"><span>The farm shelf</span><span>10 stories</span></div>
+            <div class="collection-card__body">
+              <h3>The field notebook</h3>
+              <p>Grass, weather, animals and the people who keep watch.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="subscribe">
+      <div class="container">
+        <div class="newsletter-panel newsletter-panel--forest">
+          <div class="reveal">
+            <span class="eyebrow">One letter, every Sunday</span>
+            <h2>A quiet thing for your inbox.</h2>
+            <p>Farm notes, a recipe and whatever the herd has been up to. No promotions, no daily noise, no urgency.</p>
+          </div>
+          <div class="reveal">
+            <form class="js-newsletter newsletter-form" action="#" method="post">
+              <label class="sr-only" for="journalEmail">Email address</label>
+              <input id="journalEmail" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button class="btn btn--primary" type="submit">Join the letter</button>
+            </form>
+            <p class="form-note" style="color:rgba(255,248,233,.55);">3,400 readers · unsubscribe with one click · we never share your email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

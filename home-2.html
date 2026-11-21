@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An Unhurried Pour — Meadowly Dairy Co.</title>
+  <meta name="description" content="A slower editorial edition of Meadowly: farm stories, seasonal dairy and a morning box built around your rhythm. Fresh from the Nilgiris to Coimbatore.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="An Unhurried Pour — Meadowly Dairy Co.">
+  <meta property="og:description" content="Single-origin dairy, glass bottles and a slower kind of morning.">
+  <meta property="og:image" content="assets/images/home2-hero-milk.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="home-2">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="home2-hero" id="unhurried">
+      <div class="container">
+        <div class="home2-hero__grid">
+          <div class="home2-hero__copy reveal">
+            <span class="eyebrow">The Meadowly journal · No. 47</span>
+            <h1>An <em class="editorial-mark">unhurried</em> pour.</h1>
+            <p class="lead">Some mornings ask for a rushed glass at the counter. Others ask for a table, a little light and milk that was in the pasture only hours ago. Meadowly is for the second kind.</p>
+            <div class="home2-hero__actions">
+              <a class="btn btn--primary btn--lg" href="subscription.html">Start a morning rhythm</a>
+              <a class="btn btn--outline btn--lg" href="products.html">Browse the dairy</a>
+            </div>
+            <div class="hero-note">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+              <span>Glass bottles filled before sunrise · delivered 5:30–6:30 AM across Coimbatore.</span>
+            </div>
+            <div class="home2-hero__note">
+              <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg> 160 acres of pasture</span>
+              <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg> Returnable glass</span>
+              <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg> FSSAI certified</span>
+            </div>
+          </div>
+          <div class="home2-hero__visual reveal reveal--scale" data-delay=".08s">
+            <div class="home2-hero__main">
+              <img src="assets/images/home2-hero-milk.jpg" alt="A glass bottle of milk poured at a sunny breakfast table" fetchpriority="high">
+            </div>
+            <img class="home2-hero__inset" src="assets/images/home2-hero-splash.jpg" alt="Fresh milk splashing into a glass" loading="lazy">
+            <div class="home2-hero__stamp" aria-hidden="true">
+              <div>
+                <span>Est.</span>
+                <strong>2016</strong>
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sparkle"></use></svg>
+              </div>
+            </div>
+            <div class="home2-hero__badge">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg>
+              At your door by 6:30 AM
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="pantry">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">The morning pantry</span>
+            <h2 class="section-title">A little of everything good.</h2>
+          </div>
+          <div class="section-head__actions">
+            <a class="link-arrow" href="products.html">Shop the whole pantry
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bento-grid">
+          <a class="cat-card cat-card--lg reveal" href="products.html">
+            <img src="assets/images/home2-bento-milk.jpg" alt="Glass bottles of fresh milk in morning light" loading="lazy">
+            <div class="cat-card__body">
+              <div>
+                <h3>Milk, still tasting of pasture</h3>
+                <span>Whole · A2 · chilled at dawn</span>
+              </div>
+              <span class="cat-card__arrow"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></span>
+            </div>
+          </a>
+          <a class="cat-card cat-card--tall reveal" href="products.html" style="--delay:.08s">
+            <img src="assets/images/home2-bento-curd.jpg" alt="Hand-set curd with a wooden spoon" loading="lazy">
+            <div class="cat-card__body">
+              <div>
+                <h3>Curd with a gentle set</h3>
+                <span>Spoonable · lightly tangy</span>
+              </div>
+              <span class="cat-card__arrow"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></span>
+            </div>
+          </a>
+          <a class="cat-card cat-card--sm reveal" href="products.html" style="--delay:.12s">
+            <img src="assets/images/home2-bento-paneer.jpg" alt="Soft paneer cubes on a wooden board" loading="lazy">
+            <div class="cat-card__body">
+              <div>
+                <h3>Paneer, soft-set</h3>
+                <span>Made this morning</span>
+              </div>
+              <span class="cat-card__arrow"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></span>
+            </div>
+          </a>
+          <a class="cat-card cat-card--sm reveal" href="products.html" style="--delay:.16s">
+            <img src="assets/images/home2-bento-butter.jpg" alt="Cultured butter on a breakfast table" loading="lazy">
+            <div class="cat-card__body">
+              <div>
+                <h3>Butter, cultured</h3>
+                <span>Churned slowly</span>
+              </div>
+              <span class="cat-card__arrow"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></span>
+            </div>
+          </a>
+          <a class="cat-card cat-card--sm reveal" href="products.html" style="--delay:.2s">
+            <img src="assets/images/home2-bento-cheese.jpg" alt="Aged cheese sliced on a marble board" loading="lazy">
+            <div class="cat-card__body">
+              <div>
+                <h3>Cheese, quietly aged</h3>
+                <span>Small wheels only</span>
+              </div>
+              <span class="cat-card__arrow"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="story">
+      <div class="container">
+        <div class="story-feature">
+          <div class="story-feature__media reveal reveal--left">
+            <img src="assets/images/home2-cow.jpg" alt="A healthy Gir cow in a green meadow" loading="lazy">
+            <div class="story-feature__tag">
+              <strong>Gir &amp; HF</strong>
+              <span>A herd cared for by name, not by number.</span>
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">At the farm</span>
+            <h2>The slowest decision we make each day is where the herd grazes.</h2>
+            <p class="lead">At Meadowly, freshness is not a marketing line. It's a timetable. Our partner farmers know every animal, every patch of grass and every small change in the weather.</p>
+            <div class="story-feature__list">
+              <div class="story-feature__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg>
+                <strong>Rotational grazing</strong>
+                <span>Pasture rests, soil recovers, flavour deepens.</span>
+              </div>
+              <div class="story-feature__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#drop"></use></svg>
+                <strong>Rapid chill</strong>
+                <span>Milk drops from 34°C to 4°C in under an hour.</span>
+              </div>
+              <div class="story-feature__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cow"></use></svg>
+                <strong>No hormones</strong>
+                <span>Calm, naturally fed animals. Full stop.</span>
+              </div>
+              <div class="story-feature__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg>
+                <strong>Glass loop</strong>
+                <span>Every bottle returns, washes and begins again.</span>
+              </div>
+            </div>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="sourcing.html">Visit the partner farms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ledger">
+      <div class="container">
+        <div class="ledger reveal">
+          <div class="ledger__head">
+            <span class="eyebrow">The freshness ledger</span>
+            <h2>Numbers we are happy to show you.</h2>
+            <p>No vague promises. Just the measurable small things that make a bottle taste like it came from somewhere real.</p>
+          </div>
+          <div class="ledger__grid">
+            <div class="ledger__row">
+              <strong>4:30</strong>
+              <span>First milking begins. The valley is still blue with mist.</span>
+            </div>
+            <div class="ledger__row">
+              <strong>4°C</strong>
+              <span>Milk is chilled fast, then held cold all the way to your door.</span>
+            </div>
+            <div class="ledger__row">
+              <strong>9 hrs</strong>
+              <span>Average time from pasture pail to porch bottle.</span>
+            </div>
+            <div class="ledger__row">
+              <strong>0</strong>
+              <span>Grams of plastic in our everyday milk packaging.</span>
+            </div>
+          </div>
+          <div class="ledger__checks">
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Batch-tested every morning</span>
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Glass washed at 82°C</span>
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Route tracked in real time</span>
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Farmer paid above market</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="rhythm">
+      <div class="container">
+        <div class="rhythm-panel">
+          <div class="reveal">
+            <span class="eyebrow">A rhythm, not a commitment</span>
+            <h2>Build the morning<br>you actually want.</h2>
+            <p class="lead">Choose a plan, then bend it. More milk on weekends, paneer on Fridays, nothing while you're away. Your box follows your table.</p>
+            <div class="mini-feature-grid" style="margin-top:1.4rem;">
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg>
+                <div><strong>Pause</strong><span>Skip a day or a week.</span></div>
+              </div>
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#refresh"></use></svg>
+                <div><strong>Swap</strong><span>Change items before 9 PM.</span></div>
+              </div>
+              <div class="mini-feature">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#gift"></use></svg>
+                <div><strong>Gift</strong><span>A first bottle is on us.</span></div>
+              </div>
+            </div>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="subscription.html">Choose your rhythm</a>
+              <a class="link-arrow" href="dashboard.html">See the subscriber dashboard
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="rhythm-list reveal reveal--right">
+            <div class="rhythm-row">
+              <div class="rhythm-row__name">
+                <span class="rhythm-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#milk"></use></svg></span>
+                <div><h3>The Daily Pour</h3><p>Whole milk · one litre · daily</p></div>
+              </div>
+              <span class="rhythm-row__price">₹1,290 <small>/ mo</small></span>
+              <a class="icon-btn" href="subscription.html" aria-label="Choose The Daily Pour"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+            </div>
+            <div class="rhythm-row">
+              <div class="rhythm-row__name">
+                <span class="rhythm-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#box"></use></svg></span>
+                <div><h3>The Family Table</h3><p>Milk, curd and paneer · alternate days</p></div>
+              </div>
+              <span class="rhythm-row__price">₹2,490 <small>/ mo</small></span>
+              <a class="icon-btn" href="subscription.html" aria-label="Choose The Family Table"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+            </div>
+            <div class="rhythm-row">
+              <div class="rhythm-row__name">
+                <span class="rhythm-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#butter"></use></svg></span>
+                <div><h3>The Farm Ritual</h3><p>Every dairy daypart · daily</p></div>
+              </div>
+              <span class="rhythm-row__price">₹3,890 <small>/ mo</small></span>
+              <a class="icon-btn" href="subscription.html" aria-label="Choose The Farm Ritual"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+            </div>
+          </div>
+        </div>
+        <p class="plans-note">
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg> No lock-in</span>
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg> Pause any day</span>
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg> Delivery always included</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="journal">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">The Sunday Pour</span>
+            <h2 class="section-title">Things to read with your coffee.</h2>
+            <p class="section-copy">Farm notes, recipes and small observations from the meadow. No noise, just the good stuff.</p>
+          </div>
+          <div class="section-head__actions">
+            <a class="btn btn--outline btn--sm" href="blog.html">Open the journal</a>
+          </div>
+        </div>
+        <div class="stack-lg">
+          <div class="utility-journal">
+            <article class="post-card">
+              <div class="post-card__media">
+                <span class="badge badge--butter post-card__cat">Farm note</span>
+                <img src="assets/images/home2-journal-milking.jpg" alt="Morning milking at a Meadowly partner farm" loading="lazy">
+              </div>
+              <div class="post-card__body">
+                <div class="post-card__meta"><span>3 min read</span><span class="dot"></span><span>Anaikatti</span></div>
+                <h3><a href="blog-details.html">Why the first milking tastes different</a></h3>
+                <p>It isn't romance. It's grass, temperature and the quietest hours of the day.</p>
+                <div class="post-card__footer"><span class="avatar" aria-hidden="true">AM</span><span>By Arjun Menon · 16 Nov 2026</span></div>
+              </div>
+            </article>
+            <article class="post-card">
+              <div class="post-card__media">
+                <span class="badge post-card__cat">Recipe</span>
+                <img src="assets/images/home2-journal-brunch.jpg" alt="A slow weekend brunch with dairy and fresh fruit" loading="lazy">
+              </div>
+              <div class="post-card__body">
+                <div class="post-card__meta"><span>6 min read</span><span class="dot"></span><span>Kitchen</span></div>
+                <h3><a href="blog-details.html">A brunch whose only rule is to sit down</a></h3>
+                <p>Toasted sourdough, cultured butter and a bowl of curd with fruit. That's the whole plan.</p>
+                <div class="post-card__footer"><span class="avatar" aria-hidden="true">NT</span><span>By Nila Thomas · 9 Nov 2026</span></div>
+              </div>
+            </article>
+          </div>
+          <div class="grid grid-2">
+            <div class="mini-quote">
+              <span class="avatar"><img src="assets/images/avatar-home2-1.jpg" alt="Portrait of Divya Kumar" loading="lazy"></span>
+              <div>
+                <blockquote>“The weekly note arrives on Sunday, and I read it before I get out of bed. It's the only newsletter I keep.”</blockquote>
+                <span>Divya Kumar · Vadavalli · The Family Table</span>
+              </div>
+            </div>
+            <div class="mini-quote">
+              <span class="avatar"><img src="assets/images/avatar-home2-2.jpg" alt="Portrait of Ravi Shankar" loading="lazy"></span>
+              <div>
+                <blockquote>“My mother-in-law has opinions about curd. She approves of this one. That is the highest praise in our house.”</blockquote>
+                <span>Ravi Shankar · Race Course · The Farm Ritual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

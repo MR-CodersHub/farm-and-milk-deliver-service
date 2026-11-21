@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found — Meadowly Dairy Co.</title>
+  <meta name="description" content="This page has wandered off the route. Search the meadow, browse the dairy or head back to the morning homepage.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="Page Not Found — Meadowly Dairy Co.">
+  <meta property="og:description" content="This pasture isn't on the map. Let's get you back to the good stuff.">
+  <meta property="og:image" content="assets/images/notfound-splash.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="notfound">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--sage" id="not-found">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div class="page-hero__copy reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+              <span aria-current="page">404</span>
+            </nav>
+            <span class="eyebrow">404 · Off the route</span>
+            <h1>This pasture isn't on the map.</h1>
+            <p class="lead">The page may have moved, or the link may have taken a wrong turn at the bamboo grove. Let's get you back to something good.</p>
+            <form class="newsletter-form" id="notFoundSearch" action="products.html" method="get" role="search">
+              <label class="sr-only" for="notFoundQuery">Search products or pages</label>
+              <input id="notFoundQuery" type="search" name="q" placeholder="Milk, curd, butter, journal…" autocomplete="off">
+              <button class="btn btn--primary" type="submit">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+                Search
+              </button>
+            </form>
+            <div class="page-hero__actions">
+              <a class="btn btn--outline" href="index.html">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#home"></use></svg>
+                Back to the homepage
+              </a>
+              <a class="link-arrow" href="products.html">Browse the dairy
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="page-hero__media page-hero__media--organic reveal reveal--scale">
+            <img class="main" src="assets/images/notfound-splash.jpg" alt="A milk splash on a dark farm table" fetchpriority="high">
+            <div class="tag-float">
+              <span class="badge badge--butter">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+                Lost, but not far
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="maybe-looking">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">A few good things</span>
+            <h2 class="section-title">Maybe you were looking for these.</h2>
+          </div>
+          <p class="section-copy">The three bottles that leave the farm most often. All still cold, all still in glass.</p>
+        </div>
+        <div class="collection-grid">
+          <a class="collection-card reveal" href="product-details.html">
+            <img src="assets/images/notfound-product-milk.jpg" alt="A glass bottle of fresh whole milk" loading="lazy">
+            <div class="collection-card__top"><span>Sunrise</span><span>₹78</span></div>
+            <div class="collection-card__body">
+              <h3>Whole milk</h3>
+              <p>The everyday bottle. Cream line intact, nothing added.</p>
+            </div>
+          </a>
+          <a class="collection-card reveal" href="product-details.html">
+            <img src="assets/images/notfound-product-cheese.jpg" alt="A wedge of aged cheddar on a wooden board" loading="lazy">
+            <div class="collection-card__top"><span>Cellar</span><span>₹420</span></div>
+            <div class="collection-card__body">
+              <h3>Aged cheddar</h3>
+              <p>Twelve months of patience, wrapped in beeswax.</p>
+            </div>
+          </a>
+          <a class="collection-card reveal" href="product-details.html">
+            <img src="assets/images/notfound-product-butter.jpg" alt="Cultured white butter in a ceramic dish" loading="lazy">
+            <div class="collection-card__top"><span>Kitchen</span><span>₹240</span></div>
+            <div class="collection-card__body">
+              <h3>Cultured butter</h3>
+              <p>Churned slowly, salted lightly, gone quickly.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="wandering">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Other paths</span>
+            <h2 class="section-title">Two places worth wandering into.</h2>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <article class="post-card reveal">
+            <div class="post-card__media">
+              <span class="badge badge--butter post-card__cat">Café &amp; trade</span>
+              <img src="assets/images/notfound-cafe.jpg" alt="A café counter with milk jugs and cups" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>For cafés</span><span class="dot"></span><span>Weekly routes</span></div>
+              <h3><a href="contact.html">Milk for your counter, not just your kitchen.</a></h3>
+              <p>We supply a small group of cafés and bakeries with a fixed morning drop and a simple rate card.</p>
+            </div>
+          </article>
+          <article class="post-card reveal">
+            <div class="post-card__media">
+              <span class="badge post-card__cat">The journal</span>
+              <img src="assets/images/notfound-fruit.jpg" alt="Fresh fruit beside a glass of milk" loading="lazy">
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span>Slow reading</span><span class="dot"></span><span>Weekly</span></div>
+              <h3><a href="blog.html">A quiet letter from a working dairy.</a></h3>
+              <p>Farm notes, recipes and small observations from the meadow. One issue every Sunday.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shortcuts">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Shortcuts</span>
+            <h2 class="section-title">Take the direct road.</h2>
+          </div>
+        </div>
+        <div class="quick-link-grid">
+          <a class="quick-link-card" href="index.html">
+            <span>Home</span>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+          <a class="quick-link-card" href="products.html">
+            <span>Shop the dairy</span>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+          <a class="quick-link-card" href="subscription.html">
+            <span>Subscription plans</span>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+          <a class="quick-link-card" href="dashboard.html">
+            <span>My dashboard</span>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="notfound-help">
+      <div class="container">
+        <div class="utility-support">
+          <div>
+            <h3>Still stuck? A real person can help.</h3>
+            <p>The care desk is open every day, 7 AM to 8 PM. No bots, no phone trees.</p>
+          </div>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="contact.html">Contact the care team</a>
+            <a class="btn btn--outline" href="tel:+914224001880">+91 422 400 1880</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="notfound-letter">
+      <div class="container">
+        <div class="newsletter-panel newsletter-panel--forest">
+          <div class="reveal">
+            <span class="eyebrow">One quiet thing</span>
+            <h2>Let the good stuff find you.</h2>
+            <p>Join The Sunday Pour for a weekly farm note and a recipe worth sitting down for. No noise, no urgency.</p>
+          </div>
+          <div class="reveal">
+            <form class="js-newsletter newsletter-form" action="#" method="post">
+              <label class="sr-only" for="notFoundEmail">Email address</label>
+              <input id="notFoundEmail" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button class="btn btn--primary" type="submit">Subscribe</button>
+            </form>
+            <p class="form-note" style="color:rgba(255,248,233,.55);">Unsubscribe anytime. We'll never share your email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

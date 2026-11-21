@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Desk — Meadowly Dairy Co.</title>
+  <meta name="description" content="Meadowly operations dashboard for orders, delivery routes, batch quality, customers and morning alerts.">
+  <meta property="og:title" content="Admin Desk — Meadowly Dairy Co.">
+  <meta property="og:description" content="A quiet control room for orders, routes, batch quality, households and morning alerts.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#28543B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body class="app-body" data-page="admin">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="appSidebar" aria-label="Admin navigation">
+      <a class="brand" href="index.html" aria-label="Meadowly Operations — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="brand-logo-svg"><use href="assets/icons.svg#brand-logo"></use></svg>
+        </span>
+        <span class="brand-word">Meadowly<small>Farm Operations</small></span>
+      </a>
+      <div>
+        <span class="app-sidebar__label">Control room</span>
+        <nav class="app-nav" aria-label="Admin sections">
+          <a class="app-nav__link is-active" href="#snapshot">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#grid"></use></svg>
+            Overview
+          </a>
+          <a class="app-nav__link" href="#orders">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#credit-card"></use></svg>
+            Live orders
+            <span class="app-nav__badge">7</span>
+          </a>
+          <a class="app-nav__link" href="#routes">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg>
+            Routes &amp; stock
+          </a>
+          <a class="app-nav__link" href="#quality">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg>
+            Batch quality
+          </a>
+          <a class="app-nav__link" href="#customers">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#users"></use></svg>
+            Households
+          </a>
+          <a class="app-nav__link" href="#alerts">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg>
+            Alerts &amp; tasks
+            <span class="app-nav__badge">3</span>
+          </a>
+        </nav>
+      </div>
+      <div class="app-sidebar__bottom">
+        <div class="sidebar-card">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg>
+          <strong>Morning control</strong>
+          <p>Dispatch opens at 4:30 AM. The first route leaves the dairy at 5:10 AM.</p>
+          <a href="#orders">Open the dispatch list
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+          </a>
+        </div>
+        <a class="btn btn--outline btn--sm" href="dashboard.html">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg>
+          Subscriber view
+        </a>
+        <a class="btn btn--outline btn--sm" href="login.html">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#logout"></use></svg>
+          Sign out
+        </a>
+      </div>
+    </aside>
+    <div class="app-backdrop" data-app-backdrop></div>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar__copy">
+          <button class="app-mobile-toggle" type="button" data-app-menu aria-controls="appSidebar" aria-expanded="false" aria-label="Open admin menu">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+          </button>
+          <div>
+            <p>Operations · Coimbatore</p>
+            <h1>Admin desk</h1>
+          </div>
+        </div>
+        <div class="app-topbar__actions">
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#moon"></use></svg>
+          </button>
+          <button class="icon-btn rtl-toggle" type="button" data-dir-toggle aria-label="Switch direction">
+            <span data-dir-label>RTL</span>
+          </button>
+          <a class="btn btn--outline btn--sm" href="index.html">View store</a>
+          <a class="app-user" href="dashboard.html">
+            <span class="avatar">AK</span>
+            <span>
+              <strong>Arun K.</strong>
+              <span>Operations lead</span>
+            </span>
+          </a>
+        </div>
+      </header>
+
+      <main class="app-content" id="main">
+        <section class="app-section" id="snapshot" aria-labelledby="snapshot-title">
+          <div class="app-page-head">
+            <div>
+              <span class="eyebrow">Wednesday, 18 November</span>
+              <h2 id="snapshot-title">Wednesday's dispatch, at a glance.</h2>
+              <p>186 bottles across 46 routes. Two batches are waiting for quality sign-off.</p>
+            </div>
+            <div class="app-page-head__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-admin-action="Morning report exported">Export morning report</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" style="margin-top:1.2rem;">
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#milk"></use></svg></span>
+                <span class="kpi-card__trend">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check-circle"></use></svg>
+                  Packed
+                </span>
+              </div>
+              <strong>186</strong>
+              <p>Bottles out today · <span>4 routes left</span></p>
+            </div>
+            <div class="kpi-card kpi-card--butter reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#users"></use></svg></span>
+                <span class="kpi-card__trend">+18</span>
+              </div>
+              <strong>312</strong>
+              <p>Active households · <span>this week</span></p>
+            </div>
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#credit-card"></use></svg></span>
+                <span class="kpi-card__trend">November</span>
+              </div>
+              <strong>₹4.86L</strong>
+              <p>Revenue this month · <span>612 orders</span></p>
+            </div>
+            <div class="kpi-card reveal">
+              <div class="kpi-card__top">
+                <span class="kpi-card__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg></span>
+                <span class="kpi-card__trend">Live</span>
+              </div>
+              <strong>96.4%</strong>
+              <p>On-time dispatch · <span>44 of 46 routes</span></p>
+            </div>
+          </div>
+
+          <div class="panel chart-card" style="margin-top:1.1rem;">
+            <div class="chart-header">
+              <div>
+                <h3>Bottles &amp; revenue</h3>
+                <p>Last seven days, all plans and à la carte orders.</p>
+              </div>
+              <div class="chart-switch" role="group" aria-label="Choose chart metric">
+                <button type="button" data-chart-mode="revenue" aria-pressed="true">Revenue</button>
+                <button type="button" data-chart-mode="volume" aria-pressed="false">Volume</button>
+              </div>
+            </div>
+            <div class="chart-wrap" data-chart-series="revenue">
+              <svg class="chart-svg" viewBox="0 0 760 240" role="img" aria-label="Daily revenue rose from about ₹62,000 on Thursday to ₹78,000 on Wednesday">
+                <title>Daily revenue for the last seven days</title>
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#A8B99A" stop-opacity="0.42"></stop>
+                    <stop offset="100%" stop-color="#A8B99A" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <g class="grid-line">
+                  <line x1="20" y1="30" x2="740" y2="30"></line>
+                  <line x1="20" y1="80" x2="740" y2="80"></line>
+                  <line x1="20" y1="130" x2="740" y2="130"></line>
+                  <line x1="20" y1="180" x2="740" y2="180"></line>
+                  <line x1="20" y1="210" x2="740" y2="210"></line>
+                </g>
+                <path class="area-fill" d="M20 162 L140 136 L260 148 L380 96 L500 118 L620 78 L740 68 L740 210 L20 210 Z"></path>
+                <path class="line-path" d="M20 162 L140 136 L260 148 L380 96 L500 118 L620 78 L740 68"></path>
+                <circle class="data-dot" cx="20" cy="162" r="4"></circle>
+                <circle class="data-dot" cx="140" cy="136" r="4"></circle>
+                <circle class="data-dot" cx="260" cy="148" r="4"></circle>
+                <circle class="data-dot" cx="380" cy="96" r="4"></circle>
+                <circle class="data-dot" cx="500" cy="118" r="4"></circle>
+                <circle class="data-dot" cx="620" cy="78" r="4"></circle>
+                <circle class="data-dot" cx="740" cy="68" r="4"></circle>
+                <text class="axis-label" x="20" y="228">Thu</text>
+                <text class="axis-label" x="140" y="228">Fri</text>
+                <text class="axis-label" x="260" y="228">Sat</text>
+                <text class="axis-label" x="380" y="228">Sun</text>
+                <text class="axis-label" x="500" y="228">Mon</text>
+                <text class="axis-label" x="620" y="228">Tue</text>
+                <text class="axis-label" x="738" y="228">Wed</text>
+              </svg>
+            </div>
+            <div class="chart-wrap" data-chart-series="volume" hidden>
+              <div class="bar-chart" role="img" aria-label="Bottles delivered each day, peaking at 204 on Wednesday">
+                <div class="bar-chart__col"><span class="bar-chart__value">162</span><i class="bar-chart__bar" style="--bar:64%"></i><span>Thu</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">174</span><i class="bar-chart__bar" style="--bar:72%"></i><span>Fri</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">188</span><i class="bar-chart__bar" style="--bar:80%"></i><span>Sat</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">204</span><i class="bar-chart__bar" style="--bar:92%"></i><span>Sun</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">176</span><i class="bar-chart__bar" style="--bar:74%"></i><span>Mon</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">182</span><i class="bar-chart__bar" style="--bar:78%"></i><span>Tue</span></div>
+                <div class="bar-chart__col"><span class="bar-chart__value">186</span><i class="bar-chart__bar" style="--bar:82%"></i><span>Wed</span></div>
+              </div>
+            </div>
+            <div class="panel__footer">Updated at 6:05 AM · figures include the standing morning box and café wholesale.</div>
+          </div>
+        </section>
+
+        <section class="app-section" id="orders" aria-labelledby="orders-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Dispatch board</span>
+              <h2 id="orders-title">Live orders</h2>
+              <p>Search, filter and review today's morning boxes before the routes close.</p>
+            </div>
+            <span class="status status--muted" data-order-count>7 orders</span>
+          </div>
+          <div class="panel">
+            <div class="admin-toolbar">
+              <div class="admin-toolbar__actions">
+                <label class="search-box">
+                  <span class="sr-only">Search orders</span>
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+                  <input id="adminOrderSearch" type="search" placeholder="Order or name" autocomplete="off">
+                </label>
+                <label class="sr-only" for="adminOrderStatus">Filter by status</label>
+                <select class="select-box" id="adminOrderStatus">
+                  <option value="all">All statuses</option>
+                  <option value="packing">Packing</option>
+                  <option value="out">Out for delivery</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="paused">Paused</option>
+                </select>
+              </div>
+              <div class="admin-toolbar__actions">
+                <button class="btn btn--outline btn--sm" type="button" data-admin-action="Dispatch list exported">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+                  Export
+                </button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table admin-table">
+                <caption class="sr-only">Today's live delivery orders</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Household</th>
+                    <th scope="col">Route</th>
+                    <th scope="col">Items</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-order-row data-status="packing">
+                    <td><strong>#MW-1205</strong><br><span style="color:var(--muted);font-size:.6rem;">5:30–6:30 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">MR</span>
+                        <div><strong>Meera Raghunathan</strong><span>Saibaba Colony</span></div>
+                      </div>
+                    </td>
+                    <td>Route 2</td>
+                    <td>3</td>
+                    <td><strong>₹516</strong></td>
+                    <td><span class="status status--butter">Packing</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1205 opened" aria-label="Open order MW-1205">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="out">
+                    <td><strong>#MW-1204</strong><br><span style="color:var(--muted);font-size:.6rem;">5:30–6:30 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">KS</span>
+                        <div><strong>Karthik Subramanian</strong><span>RS Puram</span></div>
+                      </div>
+                    </td>
+                    <td>Route 1</td>
+                    <td>4</td>
+                    <td><strong>₹702</strong></td>
+                    <td><span class="status">Out for delivery</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1204 opened" aria-label="Open order MW-1204">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="out">
+                    <td><strong>#MW-1203</strong><br><span style="color:var(--muted);font-size:.6rem;">5:30–6:30 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">AI</span>
+                        <div><strong>Ananya Iyer</strong><span>Race Course</span></div>
+                      </div>
+                    </td>
+                    <td>Route 3</td>
+                    <td>2</td>
+                    <td><strong>₹396</strong></td>
+                    <td><span class="status">Out for delivery</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1203 opened" aria-label="Open order MW-1203">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="packing">
+                    <td><strong>#MW-1202</strong><br><span style="color:var(--muted);font-size:.6rem;">5:30–6:30 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">FN</span>
+                        <div><strong>Fathima Noor</strong><span>Peelamedu</span></div>
+                      </div>
+                    </td>
+                    <td>Route 5</td>
+                    <td>5</td>
+                    <td><strong>₹860</strong></td>
+                    <td><span class="status status--butter">Packing</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1202 opened" aria-label="Open order MW-1202">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="delivered">
+                    <td><strong>#MW-1201</strong><br><span style="color:var(--muted);font-size:.6rem;">Delivered 5:41 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">VA</span>
+                        <div><strong>Vikram Anand</strong><span>Vadavalli</span></div>
+                      </div>
+                    </td>
+                    <td>Route 4</td>
+                    <td>3</td>
+                    <td><strong>₹516</strong></td>
+                    <td><span class="status">Delivered</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1201 opened" aria-label="Open order MW-1201">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="paused">
+                    <td><strong>#MW-1200</strong><br><span style="color:var(--muted);font-size:.6rem;">Paused by customer</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">LP</span>
+                        <div><strong>Lakshmi Priya</strong><span>Saibaba Colony</span></div>
+                      </div>
+                    </td>
+                    <td>Route 2</td>
+                    <td>2</td>
+                    <td><strong>₹438</strong></td>
+                    <td><span class="status status--muted">Paused</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1200 resumed" aria-label="Resume order MW-1200">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#refresh"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-order-row data-status="delivered">
+                    <td><strong>#MW-1199</strong><br><span style="color:var(--muted);font-size:.6rem;">Delivered 5:36 AM</span></td>
+                    <td>
+                      <div class="customer-cell">
+                        <span class="avatar">RM</span>
+                        <div><strong>Rohan Mathew</strong><span>Ganapathy</span></div>
+                      </div>
+                    </td>
+                    <td>Route 6</td>
+                    <td>3</td>
+                    <td><strong>₹516</strong></td>
+                    <td><span class="status">Delivered</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="icon-btn" type="button" data-admin-action="Order MW-1199 opened" aria-label="Open order MW-1199">
+                          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="routes" aria-labelledby="routes-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">On the road</span>
+              <h2 id="routes-title">Routes &amp; stock</h2>
+              <p>Six riders, six routes, one quiet morning across the city.</p>
+            </div>
+            <button class="btn btn--outline btn--sm" type="button" data-admin-action="Routes optimised">Optimise routes</button>
+          </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Today's routes</h3>
+                  <p>Live completion by rider.</p>
+                </div>
+                <span class="status">44 / 46</span>
+              </div>
+              <div class="panel__body">
+                <div class="route-list">
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 1 · RS Puram</strong><span>9 / 10 stops</span></div>
+                    <div class="route-bar"><i style="--w:90%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Suresh</span><span>ETA 6:20 AM</span></div>
+                  </div>
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 2 · Saibaba Colony</strong><span>8 / 8 stops</span></div>
+                    <div class="route-bar"><i style="--w:100%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Priya</span><span>Complete</span></div>
+                  </div>
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 3 · Race Course</strong><span>7 / 8 stops</span></div>
+                    <div class="route-bar"><i style="--w:87%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Bala</span><span>ETA 6:35 AM</span></div>
+                  </div>
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 4 · Vadavalli</strong><span>6 / 8 stops</span></div>
+                    <div class="route-bar"><i style="--w:75%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Naveen</span><span>Running 8 min late</span></div>
+                  </div>
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 5 · Peelamedu</strong><span>7 / 7 stops</span></div>
+                    <div class="route-bar"><i style="--w:100%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Devi</span><span>Complete</span></div>
+                  </div>
+                  <div class="route-row">
+                    <div class="route-row__top"><strong>Route 6 · Ganapathy</strong><span>7 / 8 stops</span></div>
+                    <div class="route-bar"><i style="--w:87%"></i></div>
+                    <div class="route-row__meta"><span>Rider: Sathish</span><span>ETA 6:40 AM</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Route completion updates every two minutes.</div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Cold-chain stock</h3>
+                  <p>Remaining after today's packing.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="inventory-list">
+                  <div class="inventory-item">
+                    <strong>Whole milk</strong><span>128 L</span>
+                    <div class="inventory-item__bar"><i style="--w:64%"></i></div>
+                    <span>Reserve</span><span>64%</span>
+                  </div>
+                  <div class="inventory-item">
+                    <strong>A2 Gir milk</strong><span>42 L</span>
+                    <div class="inventory-item__bar"><i class="is-low" style="--w:24%"></i></div>
+                    <span>Low stock</span><span>24%</span>
+                  </div>
+                  <div class="inventory-item">
+                    <strong>Hand-set curd</strong><span>86 pots</span>
+                    <div class="inventory-item__bar"><i style="--w:58%"></i></div>
+                    <span>Reserve</span><span>58%</span>
+                  </div>
+                  <div class="inventory-item">
+                    <strong>Cultured butter</strong><span>54 tubs</span>
+                    <div class="inventory-item__bar"><i style="--w:46%"></i></div>
+                    <span>Reserve</span><span>46%</span>
+                  </div>
+                  <div class="inventory-item">
+                    <strong>Malai paneer</strong><span>18 kg</span>
+                    <div class="inventory-item__bar"><i class="is-low" style="--w:18%"></i></div>
+                    <span>Low stock</span><span>18%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">A2 milk and paneer need a farm top-up tomorrow.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="quality" aria-labelledby="quality-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Before the bottle</span>
+              <h2 id="quality-title">Batch quality</h2>
+              <p>Every batch is logged at the dairy door. Review the morning's notes before release.</p>
+            </div>
+            <span class="status status--butter">2 awaiting review</span>
+          </div>
+          <div class="dash-grid--even dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Morning batches</h3>
+                  <p>Tap the check to log a review.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="batch-list">
+                  <div class="batch-row">
+                    <span class="batch-dot batch-dot--butter" aria-hidden="true"></span>
+                    <div><strong>Nilgiris whole milk</strong><span>NIL-2418 · 420 L · 5:40 AM</span></div>
+                    <div class="table-actions">
+                      <span class="status">Reviewed</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Review Nilgiris whole milk batch">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Anaikatti A2 milk</strong><span>ANA-1180 · 160 L · 6:10 AM</span></div>
+                    <div class="table-actions">
+                      <span class="status status--butter">QC pending</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Review Anaikatti A2 milk batch">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Pollachi curd culture</strong><span>POL-0907 · 380 pots · 4:50 AM</span></div>
+                    <div class="table-actions">
+                      <span class="status status--butter">QC pending</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Review Pollachi curd culture batch">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot batch-dot--terracotta" aria-hidden="true"></span>
+                    <div><strong>Cultured butter</strong><span>COI-0622 · 210 tubs · 4:30 AM</span></div>
+                    <div class="table-actions">
+                      <span class="status">Reviewed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">All raw milk is tested for lactometer, acidity and adulterants.</div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Cold-chain log</h3>
+                  <p>Temperature checkpoints from the morning.</p>
+                </div>
+                <span class="status">4.1°C avg</span>
+              </div>
+              <div class="panel__body">
+                <div class="batch-list">
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Receiving bay</strong><span>Raw milk intake · 4:20 AM</span></div>
+                    <time datetime="2026-11-18T04:20">3.8°C</time>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Pasteuriser</strong><span>Holding tank 2 · 4:55 AM</span></div>
+                    <time datetime="2026-11-18T04:55">4.0°C</time>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot batch-dot--butter" aria-hidden="true"></span>
+                    <div><strong>Packing floor</strong><span>Bottle line · 5:20 AM</span></div>
+                    <time datetime="2026-11-18T05:20">4.4°C</time>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Dispatch dock</strong><span>Route crates · 5:35 AM</span></div>
+                    <time datetime="2026-11-18T05:35">4.2°C</time>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Last sensor sync 6:02 AM · no excursions recorded.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="customers" aria-labelledby="customers-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">The households we serve</span>
+              <h2 id="customers-title">Households</h2>
+              <p>Your longest-standing patrons and the addresses that joined this week.</p>
+            </div>
+            <button class="btn btn--outline btn--sm" type="button" data-admin-action="Household list exported">Export households</button>
+          </div>
+          <div class="dash-grid--wide dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Most bottles this month</h3>
+                  <p>Across standing boxes and à la carte orders.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="dash-list">
+                  <div class="dash-row">
+                    <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg></span>
+                    <div class="dash-row__copy"><strong>Meera Raghunathan</strong><span>Family Table · Saibaba Colony</span></div>
+                    <strong>38</strong>
+                  </div>
+                  <div class="dash-row">
+                    <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg></span>
+                    <div class="dash-row__copy"><strong>Karthik Subramanian</strong><span>Farm Ritual · RS Puram</span></div>
+                    <strong>34</strong>
+                  </div>
+                  <div class="dash-row">
+                    <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg></span>
+                    <div class="dash-row__copy"><strong>Fathima Noor</strong><span>Family Table · Peelamedu</span></div>
+                    <strong>31</strong>
+                  </div>
+                  <div class="dash-row">
+                    <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg></span>
+                    <div class="dash-row__copy"><strong>Ananya Iyer</strong><span>Daily Pour · Race Course</span></div>
+                    <strong>28</strong>
+                  </div>
+                  <div class="dash-row">
+                    <span class="dash-row__icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg></span>
+                    <div class="dash-row__copy"><strong>Vikram Anand</strong><span>Family Table · Vadavalli</span></div>
+                    <strong>26</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">38 bottles in a month is a family of four, three mornings a week.</div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>New addresses</h3>
+                  <p>Joined in the last seven days.</p>
+                </div>
+                <span class="status">+38</span>
+              </div>
+              <div class="panel__body">
+                <div class="bar-chart" role="img" aria-label="New addresses each day, peaking at nine on Sunday">
+                  <div class="bar-chart__col"><span class="bar-chart__value">4</span><i class="bar-chart__bar" style="--bar:40%"></i><span>Thu</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">5</span><i class="bar-chart__bar" style="--bar:50%"></i><span>Fri</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">6</span><i class="bar-chart__bar" style="--bar:60%"></i><span>Sat</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">9</span><i class="bar-chart__bar" style="--bar:90%"></i><span>Sun</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">5</span><i class="bar-chart__bar" style="--bar:50%"></i><span>Mon</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">4</span><i class="bar-chart__bar" style="--bar:40%"></i><span>Tue</span></div>
+                  <div class="bar-chart__col"><span class="bar-chart__value">5</span><i class="bar-chart__bar" style="--bar:50%"></i><span>Wed</span></div>
+                </div>
+              </div>
+              <div class="panel__footer">Most new households chose the Family Table plan.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-section" id="alerts" aria-labelledby="alerts-title">
+          <div class="app-section__head">
+            <div>
+              <span class="eyebrow">Stay ahead of the morning</span>
+              <h2 id="alerts-title">Alerts &amp; tasks</h2>
+              <p>Three open items. Clear them before the dispatch desk closes.</p>
+            </div>
+            <button class="btn btn--outline btn--sm" type="button" data-admin-action="All alerts reviewed">Mark all reviewed</button>
+          </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Needs attention</h3>
+                  <p>Open operational alerts.</p>
+                </div>
+                <span class="status status--terracotta">3 open</span>
+              </div>
+              <div class="panel__body">
+                <div class="alert-list">
+                  <div class="alert-item">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg>
+                    <div>
+                      <strong>Route 4 is running late</strong>
+                      <p>Naveen is eight minutes behind after a gate-code change in Vadavalli.</p>
+                      <span class="status status--terracotta">Review</span>
+                    </div>
+                    <div class="table-actions">
+                      <button class="icon-btn" type="button" data-dismiss-alert aria-label="Dismiss Route 4 alert">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#close"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="alert-item alert-item--info">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg>
+                    <div>
+                      <strong>Two batches need sign-off</strong>
+                      <p>Anaikatti A2 milk and Pollachi curd are waiting for quality review.</p>
+                      <span class="status status--butter">QC pending</span>
+                    </div>
+                    <div class="table-actions">
+                      <button class="icon-btn" type="button" data-dismiss-alert aria-label="Dismiss batch review alert">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#close"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="alert-item">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg>
+                    <div>
+                      <strong>A2 milk stock is low</strong>
+                      <p>42 L remains. Confirm tomorrow's Anaikatti collection before 4 PM.</p>
+                      <span class="status status--terracotta">Low stock</span>
+                    </div>
+                    <div class="table-actions">
+                      <button class="icon-btn" type="button" data-dismiss-alert aria-label="Dismiss low stock alert">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#close"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">Alerts are cleared for this morning only.</div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Today's tasks</h3>
+                  <p>Small things that keep the dairy moving.</p>
+                </div>
+              </div>
+              <div class="panel__body">
+                <div class="batch-list">
+                  <div class="batch-row">
+                    <span class="batch-dot" aria-hidden="true"></span>
+                    <div><strong>Confirm Saturday route sheet</strong><span>6 riders · 46 stops · due 9 AM</span></div>
+                    <div class="table-actions">
+                      <span class="status status--butter">Due 9 AM</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Complete Saturday route sheet task">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot batch-dot--butter" aria-hidden="true"></span>
+                    <div><strong>Call Meera about gate code</strong><span>Saibaba Colony · standing box</span></div>
+                    <div class="table-actions">
+                      <span class="status status--butter">Due 10 AM</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Complete gate code call task">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="batch-row">
+                    <span class="batch-dot batch-dot--terracotta" aria-hidden="true"></span>
+                    <div><strong>Review cold-chain log</strong><span>Morning checkpoints · no excursions</span></div>
+                    <div class="table-actions">
+                      <span class="status status--butter">Due noon</span>
+                      <button class="icon-btn" type="button" data-complete-task aria-label="Complete cold-chain review task">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel__footer">The dispatch desk closes at 12:30 PM.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

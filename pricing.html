@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing — Meadowly Dairy Co.</title>
+  <meta name="description" content="Clear, simple Meadowly pricing. Use the morning calculator, add a little butter or cheese, and see exactly what your dairy rhythm costs. No hidden delivery fees.">
+  <meta name="theme-color" content="#28543B">
+  <meta property="og:title" content="Pricing — Meadowly Dairy Co.">
+  <meta property="og:description" content="A fair price for the good bottle, explained in one short page.">
+  <meta property="og:image" content="assets/images/pricing-hero.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("meadowly-theme");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        if (localStorage.getItem("meadowly-dir") === "rtl") document.documentElement.dir = "rtl";
+      } catch (error) {}
+    })();
+  </script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages.js" defer></script>
+</head>
+<body data-page="pricing">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--sage" id="pricing-hero">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div class="page-hero__copy reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+              <span aria-current="page">Pricing</span>
+            </nav>
+            <span class="eyebrow">The honest arithmetic</span>
+            <h1>Good milk, fairly priced.</h1>
+            <p class="lead">No delivery surcharge, no bottle deposit, no small print waiting at checkout. Choose what you use, see the monthly number, and change it whenever life does.</p>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="#calculator">Use the morning calculator</a>
+              <a class="btn btn--outline" href="#addons">Add a little extra</a>
+            </div>
+            <div class="page-hero__meta">
+              <div><strong>₹0</strong><span>Hidden fees</span></div>
+              <div><strong>10%</strong><span>Subscription saving</span></div>
+              <div><strong>2 mo</strong><span>Free on annual</span></div>
+            </div>
+          </div>
+          <div class="page-hero__media page-hero__media--organic reveal reveal--scale">
+            <img class="main" src="assets/images/pricing-hero.jpg" alt="A glass of milk beside a simple price card" fetchpriority="high">
+            <div class="float-card">
+              <span class="eyebrow">The everyday bottle</span>
+              <strong style="display:block; margin-top:.25rem; font-family:var(--font-display); font-size:1.3rem;">₹78 · 1 litre</strong>
+              <span style="display:block; margin-top:.2rem; color:var(--muted); font-size:.66rem;">₹70 on a subscription.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">The morning calculator</span>
+            <h2 class="section-title">See your table's number.</h2>
+          </div>
+          <p class="section-copy">A considered estimate, not a checkout. Move the sliders to match your household, then start a rhythm when it feels right.</p>
+        </div>
+        <div class="pricing-calc" id="pricingCalculator">
+          <div class="calc-panel">
+            <h3>Tell us about your mornings</h3>
+            <div class="calc-group">
+              <label for="calcLitres">Milk each delivery <output id="calcLitresValue">2.0 L</output></label>
+              <input class="range-input" type="range" id="calcLitres" min="1" max="6" step="0.5" value="2">
+            </div>
+            <div class="calc-group">
+              <label for="calcDays">Deliveries each month <output id="calcDaysValue">20 days</output></label>
+              <input class="range-input" type="range" id="calcDays" min="4" max="30" step="1" value="20">
+            </div>
+            <div class="calc-group">
+              <label for="calcType">Choose your milk</label>
+              <select class="select-box" id="calcType" style="width:100%;">
+                <option value="78">Sunrise Whole Milk · ₹78 / litre</option>
+                <option value="118">A2 Gir Cow Milk · ₹118 / litre</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <span class="field-label" style="display:block; margin-bottom:.55rem;">A little extra</span>
+              <div class="stack-sm">
+                <label class="choice-tile">
+                  <input type="checkbox" data-calc-addon="160" checked>
+                  <span class="choice-tile__check"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>
+                  <span class="choice-tile__copy"><strong>Hand-set curd, twice a week</strong><span>+ ₹160 / month</span></span>
+                </label>
+                <label class="choice-tile">
+                  <input type="checkbox" data-calc-addon="185">
+                  <span class="choice-tile__check"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>
+                  <span class="choice-tile__copy"><strong>Cultured butter</strong><span>+ ₹185 / month</span></span>
+                </label>
+                <label class="choice-tile">
+                  <input type="checkbox" data-calc-addon="240">
+                  <span class="choice-tile__check"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>
+                  <span class="choice-tile__copy"><strong>Paneer for the weekend</strong><span>+ ₹240 / month</span></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <aside class="calc-result" aria-live="polite">
+            <span class="eyebrow">Your monthly estimate</span>
+            <h3>The morning number</h3>
+            <div class="calc-result__amount">
+              <span id="calcTotal">₹3,030</span>
+              <small>/ month</small>
+            </div>
+            <div class="calc-result__rows">
+              <span>Base dairy <strong id="calcBase">₹3,120</strong></span>
+              <span>Subscription saving <strong id="calcSavings">− ₹250</strong></span>
+              <span>Add-ons <strong id="calcAddons">₹160</strong></span>
+            </div>
+            <a class="btn btn--butter" href="signup.html">Start this rhythm</a>
+            <p class="form-note" style="color:rgba(255,248,233,.5);">Estimate includes delivery and glass. Final price confirmed before your first box.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="addons">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">A little extra on the side</span>
+            <h2 class="section-title">Add to your box, one small thing at a time.</h2>
+          </div>
+          <p class="section-copy">Available to subscribers and one-off orders alike. Add them before 9 PM for the next morning.</p>
+        </div>
+        <div class="addon-grid">
+          <article class="addon-card reveal">
+            <img src="assets/images/pricing-addon-milk.jpg" alt="An extra bottle of Meadowly whole milk" loading="lazy">
+            <div class="addon-card__body">
+              <h3>An extra litre</h3>
+              <p>Because someone always asks for another glass.</p>
+              <strong>₹78 <small>/ bottle</small></strong>
+              <button class="btn btn--outline btn--sm" type="button" data-add="Extra Sunrise Whole Milk" style="margin-top:.6rem;">Add to box</button>
+            </div>
+          </article>
+          <article class="addon-card reveal">
+            <img src="assets/images/pricing-addon-butter.jpg" alt="A dish of cultured white butter" loading="lazy">
+            <div class="addon-card__body">
+              <h3>Cultured butter</h3>
+              <p>Churned slowly, salted lightly, gone quickly.</p>
+              <strong>₹185 <small>/ 200 g</small></strong>
+              <button class="btn btn--outline btn--sm" type="button" data-add="Cultured White Butter" style="margin-top:.6rem;">Add to box</button>
+            </div>
+          </article>
+          <article class="addon-card reveal">
+            <img src="assets/images/pricing-addon-cheese.jpg" alt="A wedge of aged cheddar on a board" loading="lazy">
+            <div class="addon-card__body">
+              <h3>Aged cheddar</h3>
+              <p>Nine months old, made for slow evenings.</p>
+              <strong>₹320 <small>/ 200 g</small></strong>
+              <button class="btn btn--outline btn--sm" type="button" data-add="Aged Cheddar" style="margin-top:.6rem;">Add to box</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bottom-border" id="no-surprises">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">No surprise lines</span>
+            <h2 class="section-title">What every price includes.</h2>
+          </div>
+          <p class="section-copy">The number you see is the number on your invoice. Here is what sits inside it.</p>
+        </div>
+        <div class="benefit-matrix">
+          <div class="benefit-cell reveal">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#truck"></use></svg>
+            <strong>Delivery</strong>
+            <p>Every route, every morning. No minimum order and no delivery fee.</p>
+          </div>
+          <div class="benefit-cell reveal">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg>
+            <strong>Glass loop</strong>
+            <p>Bottles, collection and washing are included. No deposit to chase.</p>
+          </div>
+          <div class="benefit-cell reveal">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg>
+            <strong>Cold-chain care</strong>
+            <p>Insulated delivery, temperature logs and a replacement guarantee.</p>
+          </div>
+          <div class="benefit-cell reveal">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#users"></use></svg>
+            <strong>A real person</strong>
+            <p>Customer care from the dairy team, 7 AM to 7 PM, every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-billing-works">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">How billing works</span>
+            <h2 class="section-title">Simple on the first of the month.</h2>
+          </div>
+          <p class="section-copy">No wallet top-ups, no surprise renewals, no charge for pausing. Here is the whole routine.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card reveal">
+            <h3>Choose and confirm</h3>
+            <p>Set your box and delivery days. We confirm the route by SMS and email before the first bottle.</p>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check-circle"></use></svg>
+          </article>
+          <article class="step-card reveal">
+            <h3>Pay monthly or yearly</h3>
+            <p>Auto-pay on the 1st, or pay for ten months and get twelve. Cancel or pause before the next cycle.</p>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#credit-card"></use></svg>
+          </article>
+          <article class="step-card reveal">
+            <h3>Change anything</h3>
+            <p>Add a bottle, skip a day or change your milk from the dashboard. Your next invoice simply follows.</p>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#refresh"></use></svg>
+          </article>
+        </div>
+        <p class="plans-note">
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#lock"></use></svg> Secure payments via Razorpay</span>
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> GST included in listed prices</span>
+          <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pause"></use></svg> Pauses never expire</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="fair-price">
+      <div class="container">
+        <div class="pricing-banner">
+          <img src="assets/images/pricing-banner.jpg" alt="A Meadowly delivery bag waiting on a sunlit doorstep" loading="lazy">
+          <div class="pricing-banner__copy">
+            <span class="eyebrow">A fair price, explained once</span>
+            <h2>The good bottle does not need a discount to be worth it.</h2>
+            <p>We pay the farm above market, use glass instead of plastic, and keep the route short. That is where the rupee goes. Everything else is simply milk.</p>
+            <a class="btn btn--butter" href="subscription.html">Choose your rhythm</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer">
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Company -->
+          <div class="footer-col footer-col--company">
+            <div class="footer-brand">
+              <a class="brand" href="index.html" aria-label="Meadowly Dairy Co. — home"><span class="brand-mark" aria-hidden="true">
+      <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#28543b"/>
+      <path d="M6 38 Q32 25 58 38 L58 60 Q32 62 6 60 Z" fill="#1b3d2a"/>
+      <path d="M2 46 Q32 38 62 46 L62 62 L2 62 Z" fill="#28543b"/>
+      <circle cx="32" cy="18" r="7.5" fill="#f2cb70" opacity="0.95"/>
+      <g transform="translate(0, 3)">
+        <path d="M27 15 h10 v3.5 h-10 Z" fill="#fffdf6" rx="1.5"/>
+        <path d="M26 14 h12 v2 h-12 Z" fill="#f2cb70" rx="1"/>
+        <path d="M28.5 18.5 h7 v5.5 h-7 Z" fill="#fffdf6"/>
+        <path d="M25 24 h14 l3 7 v16 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 v-16 l3 -7 Z" fill="#fffdf6" stroke="#28543b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="24.5" y="32" width="15" height="11" rx="2" fill="#f2cb70"/>
+        <path d="M32 31 c1.8 2.2, 2.5 3.3, 2.5 4.5 a2.5 2.5 0 0 1 -5 0 c0 -1.2, 0.7 -2.3, 2.5 -4.5 Z" fill="#28543b"/>
+        <circle cx="31.2" cy="34" r="0.6" fill="#fffdf6"/>
+        <path d="M28 27 v16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        <path d="M18 51 c3.5 -4, 8.5 -4.5, 11 -2 c-2 3.5 -6 5 -11 2 Z" fill="#a8b99a"/>
+        <path d="M46 51 c-3.5 -4, -8.5 -4.5, -11 -2 c2 3.5, 6 5, 11 2 Z" fill="#a8b99a"/>
+      </g>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="#f2cb70" stroke-width="0.9" stroke-dasharray="2.5 2" opacity="0.75"/>
+    </svg>
+    </span>
+    <span class="brand-word">Meadowly<small>Dairy Farm &amp; Fresh Milk</small></span></a>
+              <p class="footer-description">
+                Small-batch, single-origin dairy from certified Nilgiris partner farms. Bottled at dawn and delivered fresh in returnable glass bottles by 6:30 AM across Coimbatore.
+              </p>
+              <div class="footer-socials" aria-label="Social media channels">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Instagram"><svg class="icon icon--instagram" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on Facebook"><svg class="icon icon--facebook" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on X (Twitter)"><svg class="icon icon--x" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Meadowly on YouTube"><svg class="icon icon--youtube" aria-hidden="true"><use href="assets/icons.svg#youtube"></use></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Matches exact navbar order & labels) -->
+          <div class="footer-col footer-col--links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="home-2.html">Home 2</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="sourcing.html">Farm sourcing</a></li>
+              <li><a href="subscription.html">Plans</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Details -->
+          <div class="footer-col footer-col--contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list" role="list">
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--map-pin" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Farm &amp; Dairy Desk</strong>
+                  <a href="contact.html#visit">Meadowly Dairy Co., Anaikatti Road, Coimbatore 641 108</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--phone" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Phone Support</strong>
+                  <a href="tel:+914224001880">+91 422 400 1880</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--mail" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Email Desk</strong>
+                  <a href="mailto:care@meadowly.in">care@meadowly.in</a>
+                </div>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-icon" aria-hidden="true"><svg class="icon icon--clock" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg></span>
+                <div class="footer-contact-text">
+                  <strong>Working Hours</strong>
+                  <span>7:00 AM – 8:00 PM · Every day</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col footer-col--newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p class="footer-newsletter-desc">
+              Subscribe to receive the latest updates, sunrise delivery notes, seasonal offers, and fresh dairy insights.
+            </p>
+            <form class="newsletter-form js-newsletter" novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input id="footerNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+              <button class="btn btn--butter btn--sm" type="submit">Subscribe</button>
+            </form>
+            <p class="footer-fine">No spam. Low-volume morning updates. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Legal & Copyright Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-year>2026</span> Meadowly Dairy Co. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="contact.html#privacy">Privacy Policy</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="contact.html#terms">Terms &amp; Conditions</a>
+            <span class="footer-legal__sep" aria-hidden="true">|</span>
+            <a href="404.html#shortcuts">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
